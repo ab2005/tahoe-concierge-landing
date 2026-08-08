@@ -3,676 +3,511 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Rabbit Hole — Sauna. Soak. Repeat.</title>
-<meta name="description" content="Hot tub, sauna, paddle boards on the canal, dogs welcome — and the house answers the phone. See everything, plan your days for your dates, then book on the channel you trust.">
+<title>The Rabbit Hole — a tranquil Tahoe retreat with sauna, hot tub, and a concierge</title>
+<meta name="description" content="Paddle the canal, sauna and soak, ski Heavenly ten minutes away. Three bedrooms, up to six guests and two dogs — with an AI concierge that plans your days. From $450 a night.">
 <meta property="og:title" content="The Rabbit Hole — Sauna. Soak. Repeat.">
-<meta property="og:description" content="Plan your Tahoe days before you book: the house's own guide, live weather, and a concierge you can talk to. 6 guests · 3 bedrooms · hot tub · sauna · pet-friendly.">
-<meta property="og:image" content="https://tahoe-concierge.vercel.app/photos/hero-sauna.webp">
+<meta property="og:description" content="A tranquil Tahoe retreat with a cedar sauna, hot tub, paddle boards on the canal — and an AI concierge that plans your days, before and during your stay.">
+<meta property="og:image" content="https://tahoe-concierge.vercel.app/photos/ph-deck.webp">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  /* Brand tokens — mirrors the guide's stylesheet */
-  --page:#f4f4ef; --card:#fff; --line:#e0e0d6;
-  --ink:#12140f; --ink-2:#4d5245; --muted:#6b7060; --dim:#9b9f90;
-  --green:#2f6b2f; --green-hi:#3a8038; --green-dk:#24521f;
-  --tint:#eef2e8; --tint-line:#d5e0c9; --live:#8fd07a;
-  --dark:#12140f; --dark-hi:#1d2117; --dark-body:#c3c8b8; --dark-label:#b9c0aa;
-  --amber:#fdf6e6; --amber-line:#e8dcc0; --amber-ink:#8a6d2f;
-  --fs-micro:11px; --fs-meta:13px; --fs-small:15px; --fs-body:17px;
-  --fs-title:20px; --fs-head:24px; --fs-hero:34px; --fs-display:42px;
-  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
-  --r-card:12px; --r-img:8px; --r-pill:999px;
-}
-*,*::before,*::after{box-sizing:border-box}
-h1,h2,h3,h4,p,dl,dd,dt,figure,ul,ol{margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{
-  margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);
-  font-size:var(--fs-body);line-height:1.55;-webkit-font-smoothing:antialiased;
-}
-a{color:var(--green);text-decoration:none}
-a:hover{color:var(--green-dk);text-decoration:underline}
-img{max-width:100%;display:block}
-button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
-.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
-.narrow{max-width:680px}
-
-/* ── Hero gallery ──────────────────────────────────────────────────────── */
-.hero{position:relative;background:var(--dark)}
-.hero__rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.hero__rail::-webkit-scrollbar{display:none}
-.hero__slide{flex:0 0 100%;scroll-snap-align:start;position:relative}
-.hero__slide img{width:100%;height:min(62vh,560px);object-fit:cover}
-.hero__scrim{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(rgba(18,20,15,.30) 0%,rgba(18,20,15,0) 30%,rgba(18,20,15,.16) 60%,rgba(18,20,15,.86) 100%)}
-.hero__dots{position:absolute;top:14px;right:16px;display:flex;gap:5px}
-.hero__dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .16s}
-.hero__dot.on{background:#fff}
-.hero__plate{position:absolute;left:0;right:0;bottom:0;padding:0 20px 20px;color:#fff}
-.hero__plate-in{max-width:1020px;margin:0 auto}
-.hero__eyebrow{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85)}
-.hero__title{font-size:var(--fs-display);font-weight:700;line-height:1.08;letter-spacing:-.015em;margin-top:4px}
-.hero__sub{font-size:var(--fs-title);color:rgba(255,255,255,.92);margin-top:6px;max-width:34ch}
-.hero__facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-family:var(--mono);font-size:var(--fs-meta);color:rgba(255,255,255,.85)}
-.hero__cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--r-pill);
-  padding:13px 24px;font-size:var(--fs-body);font-weight:600;line-height:1;
-  border:1.5px solid var(--green);min-height:48px;background:transparent;color:var(--green);
-}
-.btn:hover{border-color:var(--green-dk);text-decoration:none}
-.btn--fill{background:var(--green);color:#fff}
-.btn--fill:hover{background:var(--green-dk);border-color:var(--green-dk);color:#fff}
-.btn--ondark{border-color:rgba(255,255,255,.55);color:#fff}
-.btn--ondark:hover{border-color:#fff;color:#fff}
-.btn--sm{padding:9px 16px;min-height:40px;font-size:var(--fs-small)}
-.btn[disabled]{opacity:.45;cursor:default}
-
-/* ── Sections ──────────────────────────────────────────────────────────── */
-.sec{padding:46px 0 6px}
-.sec__label{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-.sec__title{font-size:var(--fs-head);font-weight:700;letter-spacing:-.01em}
-.sec__lead{color:var(--ink-2);margin-top:10px;max-width:60ch}
-
-/* Highlights */
-.high{display:grid;gap:10px;margin-top:24px;grid-template-columns:repeat(2,1fr)}
-@media(min-width:760px){.high{grid-template-columns:repeat(4,1fr)}}
-.high__item{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 15px}
-.high__k{font-size:var(--fs-body);font-weight:600}
-.high__v{font-size:var(--fs-meta);color:var(--muted);margin-top:3px;font-family:var(--mono)}
-
-/* Gallery grid */
-.gal{display:grid;gap:12px;margin-top:24px;grid-template-columns:1fr 1fr}
-@media(min-width:760px){.gal{grid-template-columns:repeat(3,1fr)}}
-.gal figure{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--tint)}
-.gal img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
-.gal figcaption{
-  position:absolute;left:10px;bottom:8px;background:rgba(18,20,15,.72);color:#fff;
-  font-family:var(--mono);font-size:var(--fs-micro);padding:4px 9px;border-radius:var(--r-pill);
-}
-
-/* Planner */
-.plan{background:var(--tint);border:1px solid var(--tint-line);border-radius:var(--r-card);padding:22px 18px;margin-top:24px}
-@media(min-width:760px){.plan{padding:28px}}
-.plan__dates{display:flex;gap:12px;flex-wrap:wrap;align-items:end}
-.plan__field label{display:block;font-family:var(--mono);font-size:var(--fs-meta);color:var(--muted);margin-bottom:5px}
-.plan__field input{
-  border:1px solid var(--line);border-radius:10px;background:var(--card);padding:11px 12px;
-  font-family:var(--sans);font-size:var(--fs-body);color:var(--ink);min-height:48px;
-}
-.plan__nights{font-family:var(--mono);font-size:var(--fs-meta);color:var(--muted);padding-bottom:14px}
-.wx{margin-top:18px}
-.wx__head{font-weight:600}
-.wx__note{font-size:var(--fs-small);color:var(--ink-2);margin-top:4px;max-width:60ch}
-.wx__days{display:flex;gap:8px;overflow-x:auto;margin-top:12px;padding-bottom:4px;scrollbar-width:none}
-.wx__days::-webkit-scrollbar{display:none}
-.wx__day{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:center;min-width:86px}
-.wx__dow{font-family:var(--mono);font-size:var(--fs-micro);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.wx__ico{font-size:22px;line-height:1.4}
-.wx__t{font-family:var(--mono);font-size:var(--fs-meta)}
-.wx__t b{font-size:var(--fs-small)}
-
-/* Activity picker */
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
-.chip{
-  border:1px solid var(--line);background:var(--card);border-radius:var(--r-pill);
-  padding:8px 15px;font-size:var(--fs-small);min-height:40px;
-}
-.chip.on{background:var(--green);border-color:var(--green);color:#fff;font-weight:600}
-.acts{display:grid;gap:10px;margin-top:16px}
-@media(min-width:760px){.acts{grid-template-columns:1fr 1fr}}
-.act{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:13px 14px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
-.act--off{opacity:.55}
-.act__h{font-size:var(--fs-body);font-weight:600;line-height:1.3}
-.act__meta{font-family:var(--mono);font-size:var(--fs-meta);color:var(--muted);margin-top:3px}
-.act__season{font-family:var(--mono);font-size:var(--fs-micro);color:var(--amber-ink);margin-top:3px}
-.act__add{
-  flex:none;border:1px solid var(--tint-line);background:transparent;color:var(--green);
-  border-radius:var(--r-pill);padding:8px 14px;font-size:var(--fs-small);font-weight:600;min-height:40px;
-}
-.act__add:hover{background:var(--tint)}
-.act__add.in{background:var(--green);border-color:var(--green);color:#fff}
-
-.act-shelf{
-  grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;
-  font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.08em;text-transform:uppercase;
-  color:var(--muted);margin-top:10px;
-}
-.act-shelf a{text-transform:none;letter-spacing:0}
-
-/* My plan bar */
-.myplan{background:var(--card);border:1px solid var(--tint-line);border-radius:var(--r-card);padding:16px;margin-top:20px}
-.myplan__head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.myplan__h{font-weight:700;font-size:var(--fs-title)}
-.myplan__n{font-family:var(--mono);font-size:var(--fs-meta);color:var(--muted)}
-.myplan__list{margin-top:10px;font-size:var(--fs-small);color:var(--ink-2)}
-.myplan__list li{list-style:none;padding:6px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px}
-.myplan__list li:last-child{border-bottom:0}
-.myplan__rm{background:none;border:0;color:var(--muted);font-size:var(--fs-small);padding:0 4px;min-height:32px}
-.myplan__rm:hover{color:var(--ink)}
-.myplan__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.myplan__note{font-size:var(--fs-meta);color:var(--muted);margin-top:12px;font-family:var(--mono);line-height:1.6}
-.myplan__empty{color:var(--muted);font-size:var(--fs-small);margin-top:8px}
-
-/* Concierge dark card */
-.conc{background:var(--dark);color:var(--dark-body);border-radius:var(--r-card);padding:26px 20px;margin-top:24px}
-@media(min-width:760px){.conc{padding:32px;display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:center}}
-.conc__label{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.08em;text-transform:uppercase;color:var(--live);margin-bottom:10px}
-.conc__h{color:#fff;font-size:var(--fs-head);font-weight:700;max-width:26ch}
-.conc__p{margin-top:12px;max-width:58ch}
-.conc__p a{color:var(--live)}
-.conc__p a:hover{color:#fff}
-.conc__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.conc__quote{font-family:var(--mono);font-size:var(--fs-meta);color:var(--dark-label);border-left:2px solid var(--live);padding-left:12px;margin-top:16px}
-
-/* Booking */
-.book{display:grid;gap:14px;margin-top:24px}
-@media(min-width:760px){.book{grid-template-columns:1.2fr 1fr}}
-.book__card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:20px 18px}
-.book__h{font-weight:700;font-size:var(--fs-title)}
-.book__rows{margin-top:12px}
-.book__row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:var(--fs-small)}
-.book__row:last-child{border-bottom:0}
-.book__row b{font-weight:600}
-.book__k{color:var(--muted)}
-.book__ch{display:grid;gap:10px;margin-top:14px}
-.book__note{font-size:var(--fs-meta);color:var(--muted);margin-top:12px;font-family:var(--mono);line-height:1.6}
-
-/* Good to know */
-.know{display:grid;gap:0;margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card)}
-.know__row{padding:15px 18px;border-bottom:1px solid var(--line)}
-.know__row:last-child{border-bottom:0}
-.know__h{font-weight:600;font-size:var(--fs-body)}
-.know__p{font-size:var(--fs-small);color:var(--ink-2);margin-top:3px}
-
-.foot{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:52px}
-.foot__p{font-size:var(--fs-small);color:var(--muted);max-width:60ch}
-.foot__links{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;font-size:var(--fs-small)}
+  body{margin:0;background:#f4f4ef;color:#12140f;font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.55;}
+  a{color:#2f6b2f;text-decoration:none;}
+  a:hover{color:#24521f;text-decoration:underline;}
+  :focus-visible{outline:2px solid #2f6b2f;outline-offset:2px;border-radius:4px;}
+  h1,h2,h3,p{margin:0;}
+  img{display:block;max-width:100%;}
+  button{font-family:inherit;font-size:inherit;color:inherit;}
+  .wrap{max-width:1020px;margin:0 auto;padding-left:20px;padding-right:20px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .label{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#2f6b2f;margin:0 0 10px;}
+  .h2{font-size:24px;font-weight:700;letter-spacing:-.01em;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;line-height:1;border:1.5px solid #2f6b2f;color:#2f6b2f;background:transparent;white-space:nowrap;cursor:pointer;}
+  .btn:hover{border-color:#24521f;color:#24521f;text-decoration:none;}
+  .btn--fill{background:#2f6b2f;color:#fff;}
+  .btn--fill:hover{background:#24521f;border-color:#24521f;color:#fff;}
+  .btn--lg{padding:14px 26px;font-size:17px;min-height:48px;}
+  .btn--md{padding:12px 22px;font-size:15px;}
+  .card{background:#fff;border:1px solid #e0e0d6;border-radius:12px;}
+  .chip{display:inline-flex;align-items:center;background:#eef2e8;border:1px solid #d5e0c9;color:#24521f;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:5px 12px;white-space:nowrap;}
+  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;}
+  .g2t{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;}
+  .g6{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+  .dark-tile{background:#1d2117;border:1px solid #2a2f22;border-radius:8px;}
+  .navlink{color:#12140f;font-size:14px;}
+  .lang-btn{background:none;border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:2px 7px;border-bottom:2px solid transparent;color:#9b9f90;}
+  .lang-btn:hover{color:#24521f;}
+  .lang-btn.on{color:#2f6b2f;border-bottom-color:#2f6b2f;}
+  .filter-btn{background:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:7px 15px;border-radius:999px;white-space:nowrap;border:1px solid #e0e0d6;color:#6b7060;}
+  .filter-btn:hover{border-color:#2f6b2f;}
+  .filter-btn.on{border:1.5px solid #2f6b2f;color:#24521f;background:#eef2e8;}
+  .thumb{padding:2px;background:#fff;cursor:pointer;border-radius:8px;display:block;border:1px solid #e0e0d6;opacity:.75;}
+  .thumb.on{border:1.5px solid #2f6b2f;opacity:1;}
+  .thumb img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;}
+  .navarr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(18,20,15,.62);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .navarr:hover{background:rgba(18,20,15,.85);}
+  @media(max-width:780px){
+    .g4,.g2,.g2t{grid-template-columns:1fr;}
+    .g6{grid-template-columns:repeat(3,1fr);}
+    .hero-t{font-size:30px !important;}
+    .navlink{display:none;}
+    .pad56{padding-top:36px !important;padding-bottom:36px !important;}
+    nav{gap:10px !important;}
+    nav > div:last-child{gap:10px !important;}
+    nav .btn{padding:9px 14px !important;font-size:13px !important;}
+  }
 </style>
 </head>
 <body>
 
-<header class="hero" id="top">
-  <div class="hero__rail" id="hero-rail">
-    <div class="hero__slide"><img src="photos/hero-sauna.webp" alt="The cedar sauna with its doors open, the hot tub steaming beside it" width="1200" height="800"></div>
-    <div class="hero__slide"><img src="photos/hero-deck-wide.webp" alt="The deck: sauna, hot tub, umbrella and the pines beyond" loading="lazy" width="1200" height="800"></div>
-    <div class="hero__slide"><img src="photos/hero-hottub.webp" alt="The hot tub against the back of the house" loading="lazy" width="1200" height="800"></div>
-    <div class="hero__slide"><img src="photos/hero-sauna-in.webp" alt="Inside the sauna: warm cedar benches in the evening light" loading="lazy" width="1200" height="800"></div>
-    <div class="hero__slide"><img src="photos/hero-hammock.webp" alt="A hammock strung between the pines by the house" loading="lazy" width="1200" height="800"></div>
-    <div class="hero__slide"><img src="photos/hero-paddle.webp" alt="Paddle boards waiting by the fence" loading="lazy" width="1200" height="800"></div>
+<nav style="display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1020px;margin:0 auto;padding:22px 20px;border-bottom:1px solid #e0e0d6;">
+  <div style="font-weight:700;font-size:19px;letter-spacing:-0.01em;">785&nbsp;Tuolumne</div>
+  <div style="display:flex;gap:22px;align-items:center;font-size:14px;">
+    <a class="navlink" href="#house" data-t="navHouse"></a>
+    <a class="navlink" href="#tour" data-t="navTour"></a>
+    <a class="navlink" href="#concierge" data-t="navConcierge"></a>
+    <span id="langs" style="display:inline-flex;gap:2px;align-items:baseline;"></span>
+    <a class="btn btn--fill" style="padding:10px 20px;font-size:14px;" href="#book" data-t="cta"></a>
   </div>
-  <div class="hero__scrim" aria-hidden="true"></div>
-  <div class="hero__dots" id="hero-dots" aria-hidden="true"></div>
-  <div class="hero__plate">
-    <div class="hero__plate-in">
-      <p class="hero__eyebrow">South Lake Tahoe · Tahoe Keys · VHR #334053</p>
-      <h1 class="hero__title">The Rabbit Hole</h1>
-      <p class="hero__sub">Sauna. Soak. Repeat. — a tranquil Tahoe retreat with paddle boards on the canal and its own concierge.</p>
-      <p class="hero__facts"><span>6 guests</span><span>3 bedrooms · 3 beds</span><span>2 baths</span><span>1,655 sq ft</span><span>dogs welcome</span></p>
-      <div class="hero__cta">
-        <a class="btn btn--fill" href="#plan">Plan your stay</a>
-        <a class="btn btn--ondark" href="#book">Check rates</a>
-      </div>
-    </div>
+</nav>
+
+<header class="wrap pad56" style="padding-top:56px;padding-bottom:40px;">
+  <p class="label" style="color:#6b7060;margin-bottom:16px;" data-t="heroKicker"></p>
+  <h1 class="hero-t" style="font-size:44px;line-height:1.12;font-weight:700;letter-spacing:-0.015em;max-width:18ch;text-wrap:balance;" data-t="heroTitle"></h1>
+  <p style="font-size:20px;line-height:1.45;color:#4d5245;max-width:44ch;margin-top:18px;" data-t="heroLead"></p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;align-items:center;">
+    <a class="btn btn--fill btn--lg" href="#book" data-t="cta"></a>
+    <a class="btn btn--lg" href="#tour" data-t="ctaTour"></a>
+    <a class="chip" href="#concierge" style="gap:6px;" id="ai-tag">✦ <span data-t="heroAiTag"></span></a>
   </div>
+  <p class="mono" style="font-size:13px;color:#6b7060;margin-top:14px;" data-t="heroNote"></p>
+  <figure style="margin:36px 0 0;border-radius:12px;overflow:hidden;position:relative;">
+    <img src="photos/ph-deck.webp" alt="The back deck: cedar sauna, hot tub, BBQ and lounger" width="1400" height="700" style="width:100%;aspect-ratio:2/1;object-fit:cover;">
+    <figcaption style="position:absolute;left:14px;bottom:12px;display:inline-flex;align-items:center;gap:7px;background:rgba(18,20,15,0.78);border-radius:999px;padding:7px 13px;font-family:'IBM Plex Mono',monospace;font-size:13px;"><b style="color:#fff;font-weight:500;" data-t="heroCaption"></b></figcaption>
+  </figure>
 </header>
 
-<main>
-  <section class="sec">
-    <div class="wrap">
-      <p class="sec__label">The short version</p>
-      <h2 class="sec__title">Mornings on the water, evenings in the sauna</h2>
-      <p class="sec__lead">
-        Wake up early and take a paddle board out on the canal at the doorstep. Come
-        back for a sauna and a soak in the hot tub — before the kids even wake up.
-        Spend the day at the lake with your dogs or on the slopes at Heavenly, and
-        end it around the gas fire pit, swapping stories.
-      </p>
-      <div class="high">
-        <div class="high__item"><p class="high__k">Hot tub + sauna</p><p class="high__v">private, on the deck</p></div>
-        <div class="high__item"><p class="high__k">Paddle boards</p><p class="high__v">canal at the doorstep</p></div>
-        <div class="high__item"><p class="high__k">Dogs welcome</p><p class="high__v">up to 2 · $200 fee</p></div>
-        <div class="high__item"><p class="high__k">10 min to Heavenly</p><p class="high__v">ski storage in garage</p></div>
-        <div class="high__item"><p class="high__k">Gas fire pit + BBQ</p><p class="high__v">and a hammock</p></div>
-        <div class="high__item"><p class="high__k">Fast Wi-Fi</p><p class="high__v">250+ Mbps · workspace</p></div>
-        <div class="high__item"><p class="high__k">Sleeps 6</p><p class="high__v">2 queens · full + trundle</p></div>
-        <div class="high__item"><p class="high__k">HOA beach &amp; pool</p><p class="high__v">passes available</p></div>
-      </div>
+<section id="house" class="wrap" style="padding-top:8px;padding-bottom:44px;">
+  <div class="g4">
+    <div class="card" style="padding:20px 18px;">
+      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;">3 + 2</div>
+      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact1"></p>
     </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap">
-      <p class="sec__label">Look around</p>
-      <h2 class="sec__title">The house, honestly photographed</h2>
-      <div class="gal">
-        <figure><img src="photos/g-living.webp" alt="Living room with leather couches and the fireplace" loading="lazy" width="800" height="600"><figcaption>living room</figcaption></figure>
-        <figure><img src="photos/g-kitchen.webp" alt="The fully stocked kitchen" loading="lazy" width="800" height="600"><figcaption>kitchen</figcaption></figure>
-        <figure><img src="photos/g-dining.webp" alt="Dining table by the stairs" loading="lazy" width="800" height="600"><figcaption>dining</figcaption></figure>
-        <figure><img src="photos/g-bed1.webp" alt="Master bedroom with a queen bed" loading="lazy" width="800" height="600"><figcaption>bedroom 1 · queen</figcaption></figure>
-        <figure><img src="photos/g-bed2.webp" alt="Second bedroom with a queen bed" loading="lazy" width="800" height="600"><figcaption>bedroom 2 · queen</figcaption></figure>
-        <figure><img src="photos/g-bed3.webp" alt="Third bedroom, full bed with a trundle underneath" loading="lazy" width="800" height="600"><figcaption>bedroom 3 · full + trundle</figcaption></figure>
-        <figure><img src="photos/g-sauna-in.webp" alt="Inside the cedar sauna" loading="lazy" width="800" height="600"><figcaption>the sauna</figcaption></figure>
-        <figure><img src="photos/g-firepit.webp" alt="Fire pit corner of the back yard" loading="lazy" width="800" height="600"><figcaption>fire pit</figcaption></figure>
-        <figure><img src="photos/g-paddle.webp" alt="Paddle boards ready by the fence" loading="lazy" width="800" height="600"><figcaption>paddle boards</figcaption></figure>
-        <figure><img src="photos/hero-house.webp" alt="The house from the street, garage and bay window" loading="lazy" width="1200" height="800"><figcaption>the house</figcaption></figure>
-        <figure><img src="photos/g-living2.webp" alt="The living space toward the stairs" loading="lazy" width="800" height="600"><figcaption>living, the other way</figcaption></figure>
-        <figure><img src="photos/hero-woods.webp" alt="The pine-woods trail right behind the house" loading="lazy" width="1200" height="800"><figcaption>the pines behind</figcaption></figure>
-      </div>
+    <div class="card" style="padding:20px 18px;">
+      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;">6 + 2</div>
+      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact2"></p>
     </div>
-  </section>
-
-  <section class="sec" id="plan">
-    <div class="wrap">
-      <p class="sec__label">Plan your stay</p>
-      <h2 class="sec__title">Pick your dates — the lake tells you what fits</h2>
-      <p class="sec__lead">
-        This house comes with its own guide and concierge. Start planning before you
-        book: choose dates, see what the weather will be doing, and collect the days
-        you want. Your plan opens in the house's guide and will be waiting for you at
-        check-in — refitted to the real sky that morning.
-      </p>
-
-      <div class="plan">
-        <div class="plan__dates">
-          <div class="plan__field">
-            <label for="d-in">Check-in</label>
-            <input type="date" id="d-in">
-          </div>
-          <div class="plan__field">
-            <label for="d-out">Check-out</label>
-            <input type="date" id="d-out">
-          </div>
-          <p class="plan__nights" id="nights"></p>
-        </div>
-
-        <div class="wx" id="wx" hidden>
-          <p class="wx__head" id="wx-head"></p>
-          <p class="wx__note" id="wx-note"></p>
-          <div class="wx__days" id="wx-days"></div>
-        </div>
-
-        <div class="chips" id="chips" role="group" aria-label="Filter activities">
-          <button class="chip on" data-cat="all">Everything</button>
-          <button class="chip" data-cat="at-home">At the house</button>
-          <button class="chip" data-cat="beach">Beaches</button>
-          <button class="chip" data-cat="hike">Trails</button>
-          <button class="chip" data-cat="scenic-viewpoint">Views</button>
-          <button class="chip" data-cat="dining">Food</button>
-          <button class="chip" data-cat="book">Book a day out</button>
-        </div>
-        <div class="acts" id="acts"></div>
-
-        <div class="myplan" id="myplan">
-          <div class="myplan__head">
-            <p class="myplan__h">My plan</p>
-            <p class="myplan__n" id="plan-count">empty</p>
-          </div>
-          <ul class="myplan__list" id="plan-list"></ul>
-          <p class="myplan__empty" id="plan-empty">Tap + on anything above — this list becomes your plan in the house's guide.</p>
-          <div class="myplan__actions">
-            <a class="btn btn--sm btn--fill" id="plan-open" href="https://tahoe.ai-host.ai/" target="_blank" rel="noopener">Open plan in the guide</a>
-            <button class="btn btn--sm" id="plan-copy">Copy plan link</button>
-          </div>
-          <p class="myplan__note" id="plan-home-note" style="margin-top:8px"></p>
-          <p class="myplan__note">
-            The link carries the whole plan — send it to your group, or keep it for
-            arrival day. The same plan appears in the house's guide when you check in,
-            laid into your days by the actual weather.
-          </p>
-        </div>
-      </div>
-      <noscript><p class="sec__lead" style="margin-top:16px">The planner needs JavaScript — but the guide itself works without it: <a href="https://tahoe.ai-host.ai/">tahoe.ai-host.ai</a>.</p></noscript>
+    <div class="card" style="padding:20px 18px;">
+      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;" data-t="fact3n"></div>
+      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact3"></p>
     </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap">
-      <div class="conc">
-        <div>
-          <p class="conc__label">Your AI concierge</p>
-          <h2 class="conc__h">A seriously advanced AI agent comes with the house</h2>
-          <p class="conc__p">
-            Not a chatbot with canned answers — a state-of-the-art AI agent, trained
-            on this one house and this one lake, that accompanies you through the
-            whole stay. Before you book it talks through dates and builds your plan;
-            during the stay it serves you around the clock: replans the day when the
-            weather turns, finds the dinner that fits the evening, answers the sauna
-            question at 11 pm, and
-            hands you to the hosts the moment a human is needed.
-          </p>
-          <p class="conc__p">
-            It has its own phone number and a live voice — say it however you like,
-            it listens, answers out loud, and asks back when it isn't sure. Saved as
-            a contact it works through Siri and Google Assistant, hands-free from the
-            car. And it's honest: it's a computer run by the hosts, and it will say
-            so if you ask.
-          </p>
-          <div class="conc__actions">
-            <a class="btn btn--ondark btn--sm" href="https://tahoe.ai-host.ai/#chat">Chat with the concierge</a>
-            <a class="btn btn--ondark btn--sm" href="tel:+15715795583">Call the house</a>
-            <a class="btn btn--ondark btn--sm" href="https://tahoe.ai-host.ai/contact.vcf">Save contact</a>
-          </div>
-          <p class="conc__quote">"Hey Siri, call Tahoe Concierge" — works from the car.</p>
-        </div>
-        <img class="conc__shot" src="photos/hero-deck.webp" alt="" loading="lazy" width="1200" height="800" style="border-radius:12px;max-width:100%;height:auto">
-      </div>
+    <div class="card" style="padding:20px 18px;">
+      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;" data-t="fact4n"></div>
+      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact4"></p>
     </div>
-  </section>
-
-  <section class="sec" id="book">
-    <div class="wrap">
-      <p class="sec__label">Book it</p>
-      <h2 class="sec__title">Same house on every channel — pick the one you trust</h2>
-      <div class="book">
-        <div class="book__card">
-          <p class="book__h">Rates &amp; the practical part</p>
-          <div class="book__rows">
-            <div class="book__row"><span class="book__k">Nightly rate</span><b>from $450 · lower on weekdays</b></div>
-            <div class="book__row"><span class="book__k">Cleaning fee</span><b>$227</b></div>
-            <div class="book__row"><span class="book__k">Pets</span><b>up to 2 dogs · $200 fee</b></div>
-            <div class="book__row"><span class="book__k">Minimum stay</span><b>2 nights</b></div>
-            <div class="book__row"><span class="book__k">Instant book</span><b>yes · 24-hour lead</b></div>
-            <div class="book__row"><span class="book__k">Check-in / out</span><b>4 pm · 10 am, self check-in</b></div>
-            <div class="book__row"><span class="book__k">Age to book</span><b>25+</b></div>
-            <div class="book__row"><span class="book__k">Cancellation</span><b>free 14+ days out on most channels</b></div>
-          </div>
-        </div>
-        <div class="book__card">
-          <p class="book__h">Where to book</p>
-          <div class="book__ch" id="channels"></div>
-          <p class="book__note">
-            Booking happens on the channel's own checkout, under its policies. Your
-            plan stays with you either way — it's a link, not an account.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap narrow">
-      <p class="sec__label">The honest part</p>
-      <h2 class="sec__title">What you should know before booking</h2>
-      <div class="know">
-        <div class="know__row"><p class="know__h">It's a quiet neighborhood, and the county means it</p>
-          <p class="know__p">Quiet hours 10 pm – 8 am, hot tub closes at 10 pm, no events, up to 4 cars strictly off-street. These are local vacation-rental laws, not house whims — fines are real, so we say it plainly.</p></div>
-        <div class="know__row"><p class="know__h">No AC — like most Tahoe homes</p>
-          <p class="know__p">July–August afternoons can reach the 80s inside; fans are provided and mountain nights cool fast. Winters: heat, fireplace, and the sauna.</p></div>
-        <div class="know__row"><p class="know__h">Mosquitos in summer, bears all year</p>
-          <p class="know__p">The canal brings mosquitos on summer evenings — repellent is under the kitchen sink. And never leave food in the car: Tahoe bears open cars like lunchboxes.</p></div>
-        <div class="know__row"><p class="know__h">Winter driving is real driving</p>
-          <p class="know__p">Chains are required by law in winter storms, and snow removal can lag a heavy night. Bring boots; the reward is Heavenly, 10 minutes away.</p></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap">
-    <p class="foot__p">
-      785 Tuolumne Drive, South Lake Tahoe · VHR permit #334053 · managed by Summit
-      Tahoe, <a href="tel:+15302053434">+1 (530) 205-3434</a>. The guide and
-      concierge come with the house — custom-built by the owner so your time here
-      goes to the lake, not to figuring things out.
-    </p>
-    <p class="foot__links">
-      <a href="https://tahoe.ai-host.ai/">Open the guide</a>
-      <a href="https://tahoe.ai-host.ai/policy">How the guide works</a>
-      <a href="#top">Back to top</a>
-    </p>
   </div>
+</section>
+
+<section id="tour" class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
+  <p class="label" data-t="tourLabel"></p>
+  <h2 class="h2" data-t="tourTitle"></h2>
+  <p style="color:#4d5245;margin-top:10px;max-width:58ch;" data-t="tourLead"></p>
+  <div id="filters" style="display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 16px;"></div>
+  <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;">
+    <img id="featured" src="photos/ph-deck.webp" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+    <button class="navarr" style="left:14px;" id="prev" aria-label="Previous photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+    </button>
+    <button class="navarr" style="right:14px;" id="next" aria-label="Next photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+    </button>
+    <span id="counter" style="position:absolute;right:14px;bottom:12px;background:rgba(18,20,15,0.78);color:#c3c8b8;border-radius:999px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;white-space:nowrap;"></span>
+  </figure>
+  <p id="featured-cap" class="mono" style="margin-top:10px;font-size:14px;color:#6b7060;"></p>
+  <div id="thumbs" class="g6" style="margin-top:14px;"></div>
+  <div id="amenities" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;"></div>
+</section>
+
+<section id="concierge" class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
+  <div style="background:#12140f;color:#c3c8b8;border-radius:12px;padding:34px 32px;">
+    <p class="label" style="color:#8fd07a;">✦ <span data-t="conLabel"></span></p>
+    <h2 class="h2" style="color:#fff;max-width:30ch;" data-t="conTitle"></h2>
+    <p style="margin-top:12px;max-width:60ch;color:#b9c0aa;" data-t="conSub"></p>
+    <div class="g2t" style="margin-top:24px;">
+      <div>
+        <p style="margin:0 0 14px;font-size:15px;"><span data-t="conP1a"></span> <a href="https://tahoe.ai-host.ai" style="color:#8fd07a;">Tahoe Concierge</a><span data-t="conP1b"></span></p>
+        <p style="margin:0 0 16px;font-size:15px;" data-t="conP2"></p>
+        <p class="mono" style="font-size:13px;color:#b9c0aa;border-left:2px solid #8fd07a;padding-left:12px;" data-t="conQuote"></p>
+      </div>
+      <div class="dark-tile" style="padding:6px 18px;">
+        <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #2a2f22;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">01</span><span style="font-size:14.5px;" data-t="step1"></span></div>
+        <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #2a2f22;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">02</span><span style="font-size:14.5px;" data-t="step2"></span></div>
+        <div style="display:flex;gap:14px;padding:12px 0;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">03</span><span style="font-size:14.5px;" data-t="step3"></span></div>
+      </div>
+    </div>
+    <div class="g4" style="margin-top:28px;">
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><path d="M12 19v3"></path></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap1h"></h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap1p"></p>
+      </div>
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap2h"></h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap2p"></p>
+      </div>
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap3h"></h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap3p"></p>
+      </div>
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap4h"></h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap4p"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
+  <div class="g2">
+    <img src="photos/ph-trail.webp" alt="A sandy trail through the meadow near the house" loading="lazy" width="1400" height="1050" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
+    <div>
+      <p class="label" data-t="locLabel"></p>
+      <h2 class="h2" style="margin-bottom:10px;" data-t="locTitle"></h2>
+      <p style="color:#4d5245;margin-bottom:16px;font-size:15px;" data-t="locLead"></p>
+      <div class="card" style="border-radius:8px;padding:6px 16px;font-size:14.5px;">
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d1"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;" data-t="d1v"></span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d2"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">1.6 mi · 2.6 km</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d3"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">5.7 mi · 9.2 km</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d4"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">6 mi · 9.7 km</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;align-items:baseline;"><span data-t="d5"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">6.6 mi · 10.6 km</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
+  <div style="max-width:660px;">
+    <p class="label" data-t="honLabel"></p>
+    <h2 class="h2" style="margin-bottom:18px;" data-t="honTitle"></h2>
+    <div class="card">
+      <div style="padding:16px 18px;border-bottom:1px solid #e0e0d6;">
+        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon1h"></h3>
+        <p style="font-size:14.5px;color:#4d5245;" data-t="hon1p"></p>
+      </div>
+      <div style="padding:16px 18px;border-bottom:1px solid #e0e0d6;">
+        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon2h"></h3>
+        <p style="font-size:14.5px;color:#4d5245;" data-t="hon2p"></p>
+      </div>
+      <div style="padding:16px 18px;">
+        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon3h"></h3>
+        <p style="font-size:14.5px;color:#4d5245;" data-t="hon3p"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="wrap pad56" style="padding-top:44px;padding-bottom:8px;">
+  <div class="g2" style="gap:0;background:#fff;border:1px solid #e0e0d6;border-radius:12px;overflow:hidden;align-items:stretch;">
+    <img src="photos/ph-porch.webp" alt="The front porch with the carved bear" loading="lazy" style="width:100%;height:100%;object-fit:cover;min-height:320px;">
+    <div style="padding:28px 26px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;">
+      <p class="label" style="margin:0;" data-t="bookLabel"></p>
+      <h2 class="h2" data-t="bookTitle"></h2>
+      <p style="font-size:14.5px;color:#4d5245;" data-t="bookLead"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
+        <a class="btn btn--fill btn--md" href="https://book.summittahoerentals.com/listings/568838" target="_blank" rel="noopener" data-t="bookDirect"></a>
+        <a class="btn btn--md" href="https://www.airbnb.com/rooms/1726214996397659568" target="_blank" rel="noopener">Airbnb</a>
+        <a class="btn btn--md" href="https://www.vrbo.com/5384744" target="_blank" rel="noopener">Vrbo</a>
+        <a class="btn btn--md" href="https://www.booking.com/hotel/us/tahoe-tuolumne-sauna-soak-repeat.html" target="_blank" rel="noopener">Booking.com</a>
+        <a class="btn btn--md" href="https://www.google.com/travel/hotels/entity/CgsQ_4-3lqmQ2ubrARAC/overview" target="_blank" rel="noopener">Google</a>
+      </div>
+      <p class="mono" style="font-size:13px;color:#6b7060;margin-top:4px;"><span data-t="bookAsk1"></span> <a href="https://tahoe.ai-host.ai/#chat" data-t="bookAsk2"></a> — <span data-t="bookAsk3"></span></p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap" style="margin-top:48px;padding-top:40px;padding-bottom:56px;border-top:1px solid #e0e0d6;">
+  <p style="font-size:14.5px;color:#6b7060;max-width:56ch;margin-bottom:14px;" data-t="footP"></p>
+  <div style="display:flex;gap:20px;font-size:14.5px;flex-wrap:wrap;">
+    <a href="https://tahoe.ai-host.ai" data-t="footGuide"></a>
+    <a href="https://tahoe.ai-host.ai/policy" data-t="footPolicy"></a>
+  </div>
+  <p class="mono" style="margin-top:22px;padding-top:14px;border-top:1px solid #e0e0d6;font-size:12px;color:#9b9f90;">Tahoe&nbsp;Concierge by new-i.ai · © 2026 new-i.ai · ai-host.ai™ · VHR Permit #334053</p>
 </footer>
 
 <script>
-/* ── Config ─────────────────────────────────────────────────────────────── */
-const GUIDE = 'https://tahoe.ai-host.ai';
-const LAT = 38.9244, LON = -120.0037;
-const CHANNELS = [
-  { name: 'Book direct — best rate', url: 'https://book.summittahoerentals.com/listings/568838' },
-  { name: 'Airbnb', url: 'https://www.airbnb.com/rooms/1726214996397659568' },
-  { name: 'Vrbo', url: 'https://www.vrbo.com/5384744' },
-  { name: 'Booking.com', url: 'https://www.booking.com/hotel/us/tahoe-tuolumne-sauna-soak-repeat.html' },
-  { name: 'Google Travel', url: 'https://www.google.com/travel/hotels/entity/CgsQ_4-3lqmQ2ubrARAC/overview' },
+const PHOTOS = [
+  { id: 'ph-deck', cap: 'pDeck', gr: 'out' },
+  { id: 'ph-sauna-out', cap: 'pSaunaOut', gr: 'out' },
+  { id: 'ph-sauna-in', cap: 'pSaunaIn', gr: 'out' },
+  { id: 'ph-hottub', cap: 'pHotTub', gr: 'out' },
+  { id: 'ph-firepit', cap: 'pFirePit', gr: 'out' },
+  { id: 'ph-boards', cap: 'pBoards', gr: 'out' },
+  { id: 'ph-yard', cap: 'pYard', gr: 'out' },
+  { id: 'ph-living', cap: 'pLiving', gr: 'in' },
+  { id: 'ph-living2', cap: 'pLiving2', gr: 'in' },
+  { id: 'ph-dining', cap: 'pDining', gr: 'in' },
+  { id: 'ph-kitchen', cap: 'pKitchen', gr: 'in' },
+  { id: 'ph-bed1', cap: 'pBed1', gr: 'bed' },
+  { id: 'ph-bed2', cap: 'pBed2', gr: 'bed' },
+  { id: 'ph-bed3', cap: 'pBed3', gr: 'bed' },
+  { id: 'ph-bed4', cap: 'pBed4', gr: 'bed' }
 ];
 
-/* Activities: ids match the guide's own set, so the plan link opens there. */
-const ACTS = [
-  {id:'sauna-session', name:'Sauna', cat:'at-home', meta:'at the house · free', s:['all']},
-  {id:'hot-tub-soak', name:'Hot tub', cat:'at-home', meta:'at the house · free', s:['all']},
-  {id:'firepit-evening', name:'Fire pit under the stars', cat:'at-home', meta:'at the house · free', s:['all']},
-  {id:'big-screen-movie-night', name:'Projector movie night', cat:'at-home', meta:'at the house · free', s:['all']},
-  {id:'pine-woods-walk', name:'Pine woods behind the house', cat:'at-home', meta:'2 min walk · free', s:['all']},
-  {id:'tahoe-keys-canals', name:'Paddle the Tahoe Keys canals', cat:'at-home', meta:'at the doorstep · free', s:['summer','shoulder']},
-  {id:'fireplace-night-in', name:'Fireplace and a night in', cat:'at-home', meta:'at the house · free', s:['winter']},
-  {id:'keys-beach', name:'Rabbit Hole Beach', cat:'beach', meta:'22 min walk · free · dogs ok', s:['all']},
-  {id:'pope-beach', name:'Pope Beach', cat:'beach', meta:'10 min drive · $', s:['summer']},
-  {id:'baldwin-beach', name:'Baldwin Beach', cat:'beach', meta:'16 min drive · $', s:['summer']},
-  {id:'kiva-beach', name:'Kiva Beach', cat:'beach', meta:'15 min · free · dogs ok', s:['summer','shoulder']},
-  {id:'nevada-beach', name:'Nevada Beach', cat:'beach', meta:'22 min drive · $', s:['summer']},
-  {id:'sand-harbor-beach', name:'Sand Harbor', cat:'beach', meta:'50 min drive · $', s:['all']},
-  {id:'eagle-falls-eagle-lake-hike', name:'Eagle Falls & Eagle Lake', cat:'hike', meta:'25 min drive · $ parking', s:['summer','shoulder']},
-  {id:'mount-tallac-trail', name:'Mount Tallac', cat:'hike', meta:'15 min · full day · free', s:['summer','shoulder']},
-  {id:'rainbow-trail-taylor-creek', name:'Rainbow Trail, Taylor Creek', cat:'hike', meta:'12 min · easy · free', s:['all']},
-  {id:'van-sickle-bi-state-park', name:'Van Sickle Bi-State Park', cat:'hike', meta:'18 min · free', s:['all']},
-  {id:'angora-lakes-hike', name:'Angora Lakes', cat:'hike', meta:'25 min · easy · $', s:['summer']},
-  {id:'camp-richardson-path', name:'Camp Richardson bike path', cat:'hike', meta:'10 min · easy · free', s:['all']},
-  {id:'emerald-bay-vikingsholm', name:'Emerald Bay & Vikingsholm', cat:'scenic-viewpoint', meta:'21 min drive · $', s:['summer','shoulder']},
-  {id:'heavenly-gondola', name:'Heavenly Gondola', cat:'scenic-viewpoint', meta:'15 min drive · $$$', s:['all']},
-  {id:'berts-cafe-breakfast', name:"Bert's Cafe — breakfast", cat:'dining', meta:'8 min · $$ · host pick', s:['all']},
-  {id:'steamers-bar-and-grill', name:'Steamers Bar & Grill', cat:'dining', meta:'6 min · $$ · host pick', s:['all']},
-  {id:'off-the-hook-sushi', name:'Off The Hook Sushi', cat:'dining', meta:'8 min · $$$ · host pick', s:['all']},
-  {id:'my-thai-cuisine', name:'My Thai Cuisine', cat:'dining', meta:'6 min · $$ · host pick', s:['all']},
-  {id:'scusa-italian', name:'Scusa Italian', cat:'dining', meta:'8 min · $$ · host pick', s:['all']},
-  {id:'macduffs-pub', name:"MacDuff's Pub", cat:'dining', meta:'12 min · $$ · host pick', s:['all']},
-];
-
-
-/* The guide's own resolved shelves — top six per shelf, extracted from its
-   built Book tab. Names and picks only: prices and departures live on the
-   guide's product pages, which are always current. */
-const SHELVES = [{"key": "boats", "title": "Out on the water", "count": 60, "items": [{"code": "2535P4", "name": "Lake Tahoe Emerald Bay Scenic Cruise", "pick": true}, {"code": "271742P1", "name": "2 Hour Sailing Cruise on Lake Tahoe", "pick": false}, {"code": "2535P5", "name": "Lake Tahoe Evening Dinner Cruise", "pick": false}, {"code": "353202P1", "name": "Private Yacht-Class Boat Tour on Lake Tahoe", "pick": false}, {"code": "350081P1", "name": "Private boat tours of Lake Tahoe for up to six guests.", "pick": false}, {"code": "337938P2", "name": "2 Hour Private Boat Charter With Captain", "pick": false}]}, {"key": "paddle", "title": "Paddle and swim", "count": 33, "items": [{"code": "383103P1", "name": "Clear Kayak Tour of Sand Harbor's Crystal Clear Waters", "pick": false}, {"code": "70777P4", "name": "Truckee River: Boca to Floriston Run (Class III Whitewater)", "pick": false}, {"code": "321056P1", "name": "Clear Kayak Tour of Lake Tahoe (from Incline Village)", "pick": false}, {"code": "6451PARASAIL", "name": "South Lake Tahoe Parasailing", "pick": false}, {"code": "37022P4", "name": "Lake Tahoe's West Shore Best Shore Kayak Tour", "pick": false}, {"code": "466292P2", "name": "SAND HARBOR EXPERIENCE includes Transportation-Entry-Beach Camp", "pick": false}]}, {"key": "tours", "title": "Seeing the lake", "count": 38, "items": [{"code": "268564P2", "name": "Tahoe Coastal Self-Guided E-Bike Tour(2–4 hrs) | East Shore Trail", "pick": false}, {"code": "259648P2", "name": "Ultimate Lake Tahoe Self-Guided Driving Audio Tour", "pick": false}, {"code": "91965P2", "name": "Emerald Bay Helicopter Tour of Lake Tahoe", "pick": false}, {"code": "6508P4", "name": "Yosemite Grand Adventure - day tour from S. Lake Tahoe", "pick": false}, {"code": "466292P1", "name": "&quot;Lake Tahoe 101&quot; : See The Whole Lake! 6 HR Shared Tour by Van.", "pick": false}, {"code": "6508TAHOE", "name": "Full-Day Lake Tahoe Circle Tour including Olympic Valley", "pick": false}]}, {"key": "land", "title": "On foot, wheels and hooves", "count": 22, "items": [{"code": "285594P6", "name": "Electric Dirtbike Adventure in Lake Tahoe", "pick": false}, {"code": "285594P5", "name": "Sunset Hike and Photography Adventure in South Lake Tahoe", "pick": false}, {"code": "330916P1", "name": "Lake Tahoe-Hike Year Round With a Local", "pick": false}, {"code": "285594P9", "name": "Hidden Trails Hiking Adventure in South Lake Tahoe", "pick": false}, {"code": "358497P4", "name": "Beginner Archery Experience in Lake Tahoe–Outdoor Shooting Lesson", "pick": false}, {"code": "469165P1", "name": "Via Ferrata Adventure in North Lake Tahoe", "pick": false}]}, {"title": "From above", "count": 1, "items": [{"code": "5655277P1", "name": "Ultimate Tahoe Balloon Adventure", "pick": false}]}, {"key": "indoors", "title": "When the lake is not the plan", "count": 18, "items": [{"code": "5670713P1", "name": "Alex Ramon Magic Show Ticket, Lake Tahoe", "pick": false}, {"code": "5493228P1", "name": "Charcuterie Board Making (and Eating!) in South Lake Tahoe", "pick": false}, {"code": "200006P225", "name": "Lake Tahoe Tirade Scavenger Hunt", "pick": false}, {"code": "5619414P3", "name": "Craft Your Own Custom Candles Tahoe Workshop", "pick": false}, {"code": "5676505P3", "name": "Make Your Own Tahoe Incense from Pine Resin & Wild Herbs", "pick": false}, {"code": "485100P2", "name": "Mini Golf 9 Hole Course in Lake Tahoe", "pick": false}]}];
-
-/* Typical month, when the forecast can't reach your dates. °F highs/lows. */
-const CLIMO = {
-  1:['41°/19°','Deep winter: Heavenly in full swing, fireplace and sauna weather. Chains in the car.'],
-  2:['42°/20°','Snowiest stretch of the year — ski days and hot-tub nights.'],
-  3:['47°/24°','Spring skiing on top, first sunny decks below.'],
-  4:['53°/28°','Shoulder season: quiet trails, some snow up high, good rates.'],
-  5:['62°/34°','Waterfalls at full roar, aspens leafing out. Lake still cold.'],
-  6:['72°/39°','Early summer: long days, canal paddling starts, evening mosquitos too.'],
-  7:['80°/44°','Peak Tahoe: beach days, warm canal, dry skies almost every day.'],
-  8:['79°/43°','Beach season in full swing — book boats and dinners ahead.'],
-  9:['73°/38°','Warm days, thinner crowds — many locals’ favorite month.'],
-  10:['62°/31°','Fall colors and kokanee salmon at Taylor Creek. Crisp nights.'],
-  11:['49°/25°','Quiet month; first storms, resorts open late November.'],
-  12:['41°/19°','Holiday snow: ski mornings, fireplace evenings, sauna nights.'],
+const STRINGS = {
+  en: {
+    navHouse: 'The house', navTour: 'Photo tour', navConcierge: 'Concierge', cta: 'Check dates', ctaTour: 'See the house',
+    heroKicker: 'South Lake Tahoe · Tahoe Keys · Sleeps 6 · Pet friendly',
+    heroTitle: 'A tranquil Tahoe retreat — sauna, hot tub, and a concierge',
+    heroLead: "Paddle the canal before the kids wake up, sauna and soak while the coffee brews, ski Heavenly ten minutes away, and end the night around the gas fire pit. Three bedrooms, two baths, up to six guests and two well-behaved dogs — with an AI concierge that plans your days and answers any question, before and during your stay.",
+    heroNote: 'From $450 a night · 2-night minimum · instant booking',
+    heroCaption: 'The back deck — sauna, hot tub, grill, and pines.',
+    fact1: 'Bedrooms and baths — two queens up, a full with trundle for the kids',
+    fact2: 'Guests, plus up to two well-behaved dogs — the deck is fully fenced',
+    fact3n: '10 min', fact3: 'To Heavenly Ski Resort; the Tahoe Keys canal is a walk with a paddle board',
+    fact4n: '4 cars', fact4: 'Two in the garage, two on the driveway — and 250+ Mbps Wi-Fi inside',
+    tourLabel: 'Photo tour', tourTitle: 'Walk through the house',
+    tourLead: 'Everything made with love — a cosy living room with a gas fireplace, a fully stocked kitchen, and a backyard built for whole days outside.',
+    amenities: ['Hot tub', 'Cedar sauna', 'Paddle boards', 'Gas fire pit', 'Gas BBQ', 'Hammock', 'Gas fireplace', 'Washer & dryer', 'Ski storage', 'Workspace'],
+    amHoa: 'HOA passes: private beach, pool & tennis',
+    heroAiTag: 'AI concierge included',
+    conLabel: 'The distinguishing feature', conTitle: 'Tahoe Concierge — an advanced AI agent, in service of your stay',
+    conSub: 'Not a chatbot with canned answers: an AI agent built by the owner on frontier models, with real knowledge of this house, this lake, and your dates — and the agency to plan, replan, and act on your behalf.',
+    cap1h: 'Talks like a person', cap1p: 'Voice on the house’s own phone number and text in chat — interrupt it mid-sentence, it stops and listens. No app, no account.',
+    cap2h: 'Plans and replans', cap2p: 'Builds your itinerary from your dates and interests, resolves conflicts, and reshuffles the plan when the day changes.',
+    cap3h: 'Reads the sky', cap3p: 'Watches the forecast and the live lake cam — kayaks slide to tomorrow, the sauna moves up to today.',
+    cap4h: 'Knows the house', cap4p: 'The sauna, the hot tub, the trash days, the door code rule — every answer in the owner’s own words.',
+    conP1a: 'Every booking comes with', conP1b: ' — a guide to this house and the lake, built by the owner. Open it the day you book: enter your dates and start planning with an AI concierge that knows the area, the house, and the season. Beaches we return to, trails by difficulty, around two hundred bookable tours and rentals — talk it through in chat or out loud on the phone, and keep what fits in your plan.',
+    conP2: "Then you arrive, and the plan goes to work. The first screen shows the weather at the house and a live camera on the lake; if the day changes, the concierge reshuffles the plan — kayaks slide to tomorrow, the sauna moves up to today. Every house question — how the sauna heats, when trash goes out — is one question away, in chat or by phone with no internet at all.",
+    conQuote: 'Plan before you arrive. Let the weather change. The plan keeps up.',
+    step1: 'Book the house — the guide link arrives with your confirmation',
+    step2: 'Build your plan with the concierge before you arrive',
+    step3: "Live it out — the plan adjusts to each day's weather",
+    locLabel: 'The location', locTitle: 'The quiet edge of the Tahoe Keys',
+    locLead: "Next to the canal for morning paddles, in a residential neighbourhood families come back to year after year. The Keys' private beach is a walk away with an HOA pass; groceries are six minutes by car.",
+    d1: 'Tahoe Keys private beach', d1v: 'walking', d2: "Raley's grocery", d3: 'Heavenly Village & gondola', d4: 'Stateline casinos', d5: 'Heavenly Ski Resort',
+    honLabel: 'The honest part', honTitle: 'Worth knowing before you book',
+    hon1h: "It's a real neighbourhood",
+    hon1p: 'Quiet hours 10pm–8am, hot tub closes at 10 — county law, strictly kept. No parties, no smoking anywhere on the property, 25+ to book.',
+    hon2h: "It's the mountains",
+    hon2p: 'No AC — July afternoons can reach the 80s °F (high 20s °C); we provide fans. Summer evenings bring mosquitos near the water (repellent under the kitchen sink). Winter needs chains, and bears will inspect an unlocked car.',
+    hon3h: 'Dogs are welcome, properly',
+    hon3p: 'Up to two potty-trained dogs, $200 pet fee added to the reservation, off the furniture, leashed on walks.',
+    bookLabel: 'Booking', bookTitle: "Book where you're comfortable",
+    bookLead: 'The house is listed on all major platforms — same home, same hosts, and booking direct is always welcome. From $450 a night plus cleaning, two-night minimum, instant booking. Check-in 4pm by door code, checkout 10am. Full refund up to 14 days before arrival on most channels.',
+    bookDirect: 'Book direct',
+    bookAsk1: 'Questions before booking?', bookAsk2: 'Ask the concierge', bookAsk3: 'most of the guide is open to everyone.',
+    footP: 'A family home in the pines, hosted with care by Summit Tahoe — and a guide built by the owner so your time here goes to the lake.',
+    footGuide: 'Open the guide', footPolicy: 'How the guide works',
+    filters: { all: 'All photos', out: 'Outside', in: 'Living & kitchen', bed: 'Bedrooms' },
+    caps: {
+      pDeck: 'The back deck — sauna, hot tub, grill and loungers.',
+      pSaunaOut: 'The cedar sauna, with the outdoor shower beside it.',
+      pSaunaIn: 'Inside the sauna — benches for the whole family.',
+      pHotTub: 'The hot tub, lawn and pines behind.',
+      pFirePit: 'The gas fire pit on the stone patio.',
+      pBoards: 'Paddle boards, ready for the canal.',
+      pYard: 'The fenced backyard from the lawn.',
+      pLiving: 'The living room — gas fireplace and a big smart TV.',
+      pLiving2: 'The living room toward the kitchen and stairs.',
+      pDining: 'The dining table under the antler chandelier.',
+      pKitchen: 'The fully stocked kitchen.',
+      pBed1: 'Bedroom 1 — queen log bed, bay window seat, upstairs.',
+      pBed2: 'Bedroom 1 from the window side.',
+      pBed3: 'Bedroom 2 — queen bed and a desk, upstairs.',
+      pBed4: 'Bedroom 3 — full bed with a trundle underneath.'
+    }
+  },
+  ru: {
+    navHouse: 'Дом', navTour: 'Фото-тур', navConcierge: 'Консьерж', cta: 'Проверить даты', ctaTour: 'Посмотреть дом',
+    heroKicker: 'Саут-Лейк-Тахо · Tahoe Keys · До 6 гостей · Можно с собаками',
+    heroTitle: 'Тихий дом у Тахо — сауна, джакузи и консьерж',
+    heroLead: 'Утром — сап-борд по каналу, пока дети спят; сауна и джакузи, пока варится кофе; десять минут до склонов Heavenly — и вечер у газового костра. Три спальни, две ванные, до шести гостей и двух воспитанных собак — и ИИ-консьерж, который планирует ваши дни и отвечает на любой вопрос, до и во время поездки.',
+    heroNote: 'От $450 за ночь · минимум 2 ночи · мгновенное бронирование',
+    heroCaption: 'Задняя палуба — сауна, джакузи, гриль и сосны.',
+    fact1: 'Спальни и ванные — две queen-кровати наверху и full с выдвижной для детей',
+    fact2: 'Гостей, плюс до двух воспитанных собак — палуба полностью огорожена',
+    fact3n: '10 мин', fact3: 'До курорта Heavenly; канал Tahoe Keys — в двух шагах, сап-борды в комплекте',
+    fact4n: '4 машины', fact4: 'Две в гараже, две на подъезде — и Wi-Fi 250+ Мбит/с в доме',
+    tourLabel: 'Фото-тур', tourTitle: 'Пройдитесь по дому',
+    tourLead: 'Всё сделано с любовью — уютная гостиная с газовым камином, полностью укомплектованная кухня и двор, созданный для целых дней на воздухе.',
+    amenities: ['Джакузи', 'Кедровая сауна', 'Сап-борды', 'Газовый костёр', 'Газовый гриль', 'Гамак', 'Газовый камин', 'Стиральная и сушильная', 'Хранение лыж', 'Рабочее место'],
+    amHoa: 'Пропуска HOA: частный пляж, бассейн и теннис',
+    heroAiTag: 'ИИ-консьерж в комплекте',
+    conLabel: 'Главное отличие', conTitle: 'Tahoe Concierge — продвинутый ИИ-агент на службе вашей поездки',
+    conSub: 'Не чат-бот с готовыми ответами: ИИ-агент, построенный владельцем на передовых моделях, со знанием этого дома, этого озера и ваших дат — и с полномочиями планировать, перестраивать и действовать за вас.',
+    cap1h: 'Говорит по-человечески', cap1p: 'Голос на собственном номере дома и текст в чате — перебейте на полуслове, он замолчит и выслушает. Без приложения и аккаунта.',
+    cap2h: 'Планирует и перестраивает', cap2p: 'Собирает маршрут из ваших дат и интересов, разводит конфликты и пересобирает план, когда день меняется.',
+    cap3h: 'Читает небо', cap3p: 'Следит за прогнозом и живой камерой озера — каяки сдвигаются на завтра, сауна поднимается на сегодня.',
+    cap4h: 'Знает дом', cap4p: 'Сауна, джакузи, дни мусора, правило кода двери — каждый ответ словами владельца.',
+    conP1a: 'К каждому бронированию прилагается', conP1b: ' — гид по этому дому и озеру, построенный владельцем. Откройте его в день брони: введите даты и начните планировать с ИИ-консьержем, который знает округу, дом и сезон. Пляжи, куда мы возвращаемся сами, тропы по сложности, около двухсот туров и прокатов — обсудите в чате или голосом по телефону и оставьте в плане то, что подходит.',
+    conP2: 'А потом вы приезжаете — и план начинает работать. Первый экран показывает погоду у дома и живую камеру на озере; если день изменился, консьерж пересобирает план — каяки сдвигаются на завтра, сауна поднимается на сегодня. Любой вопрос о доме — как греется сауна, когда выносить мусор — в одном вопросе, в чате или по телефону вообще без интернета.',
+    conQuote: 'Спланируйте до приезда. Пусть погода меняется. План успеет.',
+    step1: 'Забронируйте дом — ссылка на гид придёт с подтверждением',
+    step2: 'Соберите план с консьержем до приезда',
+    step3: 'Живите по плану — он подстраивается под погоду каждого дня',
+    locLabel: 'Локация', locTitle: 'Тихий край Tahoe Keys',
+    locLead: 'Рядом канал для утренних заплывов, вокруг — жилой район, куда семьи возвращаются год за годом. Частный пляж Keys — пешком с пропуском HOA; продукты — шесть минут на машине.',
+    d1: 'Частный пляж Tahoe Keys', d1v: 'пешком', d2: 'Супермаркет Raley’s', d3: 'Heavenly Village и гондола', d4: 'Казино Stateline', d5: 'Курорт Heavenly',
+    honLabel: 'Честная часть', honTitle: 'Что стоит знать до брони',
+    hon1h: 'Это настоящий жилой район',
+    hon1p: 'Тихие часы 22:00–8:00, джакузи закрывается в 22:00 — закон округа, соблюдается строго. Без вечеринок, курение запрещено везде на участке, бронь от 25 лет.',
+    hon2h: 'Это горы',
+    hon2p: 'Кондиционера нет — в июле днём бывает под +30 °C; есть вентиляторы. Летними вечерами у воды комары (репеллент под кухонной раковиной). Зимой нужны цепи, а медведи проверяют незапертые машины.',
+    hon3h: 'С собаками можно — по правилам',
+    hon3p: 'До двух приученных собак, сбор $200 добавляется к брони, без мебели и кроватей, на поводке на прогулках.',
+    bookLabel: 'Бронирование', bookTitle: 'Бронируйте там, где привычно',
+    bookLead: 'Дом размещён на всех крупных площадках — тот же дом, те же хозяева, а прямая бронь всегда приветствуется. От $450 за ночь плюс уборка, минимум две ночи, мгновенная бронь. Заезд в 16:00 по коду двери, выезд в 10:00. Полный возврат до 14 дней до заезда на большинстве каналов.',
+    bookDirect: 'Прямая бронь',
+    bookAsk1: 'Вопросы до брони?', bookAsk2: 'Спросите консьержа', bookAsk3: 'большая часть гида открыта всем.',
+    footP: 'Семейный дом среди сосен, под заботливым управлением Summit Tahoe — и гид, построенный владельцем, чтобы ваше время здесь уходило на озеро.',
+    footGuide: 'Открыть гид', footPolicy: 'Как устроен гид',
+    filters: { all: 'Все фото', out: 'Снаружи', in: 'Гостиная и кухня', bed: 'Спальни' },
+    caps: {
+      pDeck: 'Задняя палуба — сауна, джакузи, гриль и шезлонги.',
+      pSaunaOut: 'Кедровая сауна, рядом — уличный душ.',
+      pSaunaIn: 'Внутри сауны — полки на всю семью.',
+      pHotTub: 'Джакузи, за ним газон и сосны.',
+      pFirePit: 'Газовый костёр на каменном патио.',
+      pBoards: 'Сап-борды — готовы к каналу.',
+      pYard: 'Огороженный задний двор с газона.',
+      pLiving: 'Гостиная — газовый камин и большой телевизор.',
+      pLiving2: 'Гостиная в сторону кухни и лестницы.',
+      pDining: 'Обеденный стол под люстрой из рогов.',
+      pKitchen: 'Полностью укомплектованная кухня.',
+      pBed1: 'Спальня 1 — queen-кровать из брёвен, диван у эркера, второй этаж.',
+      pBed2: 'Спальня 1 со стороны окна.',
+      pBed3: 'Спальня 2 — queen-кровать и рабочий стол, второй этаж.',
+      pBed4: 'Спальня 3 — кровать full с выдвижной снизу.'
+    }
+  },
+  es: {
+    navHouse: 'La casa', navTour: 'Tour de fotos', navConcierge: 'El conserje', cta: 'Ver fechas', ctaTour: 'Ver la casa',
+    heroKicker: 'South Lake Tahoe · Tahoe Keys · Hasta 6 huéspedes · Admite mascotas',
+    heroTitle: 'Un refugio tranquilo en Tahoe — sauna, jacuzzi y conserje',
+    heroLead: 'Rema por el canal antes de que despierten los niños, sauna y jacuzzi mientras se hace el café, esquía en Heavenly a diez minutos y cierra la noche junto al fuego de gas. Tres habitaciones, dos baños, hasta seis huéspedes y dos perros bien educados — con un conserje de IA que planifica tus días y responde cualquier pregunta, antes y durante tu estadía.',
+    heroNote: 'Desde $450 la noche · mínimo 2 noches · reserva instantánea',
+    heroCaption: 'La terraza trasera — sauna, jacuzzi, parrilla y pinos.',
+    fact1: 'Habitaciones y baños — dos camas queen arriba y una full con nido para los niños',
+    fact2: 'Huéspedes, más hasta dos perros bien educados — la terraza está totalmente cercada',
+    fact3n: '10 min', fact3: 'Al resort de esquí Heavenly; el canal de Tahoe Keys queda a un paseo con paddle board',
+    fact4n: '4 autos', fact4: 'Dos en el garaje, dos en la entrada — y Wi-Fi de 250+ Mbps dentro',
+    tourLabel: 'Tour de fotos', tourTitle: 'Recorre la casa',
+    tourLead: 'Todo hecho con cariño — una sala acogedora con chimenea de gas, una cocina totalmente equipada y un patio pensado para días enteros al aire libre.',
+    amenities: ['Jacuzzi', 'Sauna de cedro', 'Paddle boards', 'Fogata de gas', 'Parrilla de gas', 'Hamaca', 'Chimenea de gas', 'Lavadora y secadora', 'Guarda-esquís', 'Espacio de trabajo'],
+    amHoa: 'Pases HOA: playa privada, piscina y tenis',
+    heroAiTag: 'Conserje de IA incluido',
+    conLabel: 'El rasgo distintivo', conTitle: 'Tahoe Concierge — un agente de IA avanzado al servicio de tu estadía',
+    conSub: 'No es un chatbot de respuestas enlatadas: un agente de IA creado por el dueño sobre modelos de frontera, con conocimiento real de esta casa, este lago y tus fechas — y la autonomía para planificar, replanificar y actuar por ti.',
+    cap1h: 'Habla como una persona', cap1p: 'Voz en el número propio de la casa y texto por chat — interrúmpelo a media frase, se calla y escucha. Sin app, sin cuenta.',
+    cap2h: 'Planifica y replanifica', cap2p: 'Arma tu itinerario con tus fechas e intereses, resuelve choques y reorganiza el plan cuando el día cambia.',
+    cap3h: 'Lee el cielo', cap3p: 'Vigila el pronóstico y la cámara del lago en vivo — los kayaks pasan a mañana, la sauna sube a hoy.',
+    cap4h: 'Conoce la casa', cap4p: 'La sauna, el jacuzzi, los días de basura, la regla del código — cada respuesta con palabras del dueño.',
+    conP1a: 'Cada reserva incluye', conP1b: ' — una guía de esta casa y del lago, creada por el dueño. Ábrela el día que reserves: ingresa tus fechas y empieza a planificar con un conserje de IA que conoce la zona, la casa y la temporada. Playas a las que volvemos, senderos por dificultad, unas doscientas ofertas de tours y alquileres — convérsalo por chat o de viva voz por teléfono, y guarda en tu plan lo que encaje.',
+    conP2: 'Luego llegas, y el plan se pone a trabajar. La primera pantalla muestra el clima en la casa y una cámara en vivo del lago; si el día cambia, el conserje reorganiza el plan — los kayaks pasan a mañana, la sauna sube a hoy. Cualquier duda de la casa — cómo se calienta la sauna, cuándo sacar la basura — está a una pregunta, por chat o por teléfono sin internet alguno.',
+    conQuote: 'Planifica antes de llegar. Deja que el clima cambie. El plan se adapta.',
+    step1: 'Reserva la casa — el enlace de la guía llega con tu confirmación',
+    step2: 'Arma tu plan con el conserje antes de llegar',
+    step3: 'Vívelo — el plan se ajusta al clima de cada día',
+    locLabel: 'La ubicación', locTitle: 'El rincón tranquilo de Tahoe Keys',
+    locLead: 'Junto al canal para remar por la mañana, en un barrio residencial al que las familias vuelven año tras año. La playa privada de los Keys queda a pie con pase HOA; el supermercado, a seis minutos en auto.',
+    d1: 'Playa privada de Tahoe Keys', d1v: 'a pie', d2: 'Supermercado Raley’s', d3: 'Heavenly Village y góndola', d4: 'Casinos de Stateline', d5: 'Resort de esquí Heavenly',
+    honLabel: 'La parte honesta', honTitle: 'Vale saberlo antes de reservar',
+    hon1h: 'Es un barrio de verdad',
+    hon1p: 'Horas de silencio de 22:00 a 8:00, el jacuzzi cierra a las 22 — ley del condado, estrictamente aplicada. Sin fiestas, prohibido fumar en toda la propiedad, 25+ para reservar.',
+    hon2h: 'Es la montaña',
+    hon2p: 'Sin aire acondicionado — las tardes de julio pueden llegar a los 28 °C; hay ventiladores. Las noches de verano traen mosquitos cerca del agua (repelente bajo el fregadero). El invierno exige cadenas, y los osos revisan los autos sin llave.',
+    hon3h: 'Perros bienvenidos, con reglas',
+    hon3p: 'Hasta dos perros entrenados, tarifa de $200 añadida a la reserva, fuera de los muebles, con correa en los paseos.',
+    bookLabel: 'Reserva', bookTitle: 'Reserva donde te sientas cómodo',
+    bookLead: 'La casa está en todas las plataformas principales — la misma casa, los mismos anfitriones, y reservar directo siempre es bienvenido. Desde $450 la noche más limpieza, mínimo dos noches, reserva instantánea. Check-in a las 4pm con código de puerta, checkout a las 10am. Reembolso total hasta 14 días antes en la mayoría de los canales.',
+    bookDirect: 'Reserva directa',
+    bookAsk1: '¿Preguntas antes de reservar?', bookAsk2: 'Pregunta al conserje', bookAsk3: 'casi toda la guía está abierta a todos.',
+    footP: 'Una casa familiar entre pinos, administrada con cariño por Summit Tahoe — y una guía creada por el dueño para que tu tiempo aquí se vaya al lago.',
+    footGuide: 'Abrir la guía', footPolicy: 'Cómo funciona la guía',
+    filters: { all: 'Todas las fotos', out: 'Exterior', in: 'Sala y cocina', bed: 'Habitaciones' },
+    caps: {
+      pDeck: 'La terraza trasera — sauna, jacuzzi, parrilla y tumbonas.',
+      pSaunaOut: 'La sauna de cedro, con la ducha exterior al lado.',
+      pSaunaIn: 'Dentro de la sauna — bancos para toda la familia.',
+      pHotTub: 'El jacuzzi, con el césped y los pinos detrás.',
+      pFirePit: 'La fogata de gas en el patio de piedra.',
+      pBoards: 'Paddle boards, listas para el canal.',
+      pYard: 'El patio trasero cercado, desde el césped.',
+      pLiving: 'La sala — chimenea de gas y un gran smart TV.',
+      pLiving2: 'La sala hacia la cocina y la escalera.',
+      pDining: 'La mesa del comedor bajo la lámpara de astas.',
+      pKitchen: 'La cocina totalmente equipada.',
+      pBed1: 'Habitación 1 — cama queen de troncos y ventanal, arriba.',
+      pBed2: 'Habitación 1 desde el lado de la ventana.',
+      pBed3: 'Habitación 2 — cama queen y escritorio, arriba.',
+      pBed4: 'Habitación 3 — cama full con nido debajo.'
+    }
+  }
 };
 
-/* ── Hero dots ──────────────────────────────────────────────────────────── */
-const rail = document.getElementById('hero-rail');
-const dotsBox = document.getElementById('hero-dots');
-const slides = rail.children.length;
-for (let i=0;i<slides;i++){ const d=document.createElement('span'); d.className='hero__dot'+(i?'':' on'); dotsBox.appendChild(d); }
-rail.addEventListener('scroll', () => {
-  const i = Math.round(rail.scrollLeft / rail.clientWidth);
-  [...dotsBox.children].forEach((d,j)=>d.classList.toggle('on', j===i));
-}, {passive:true});
+let lang = localStorage.getItem('tahoe-landing-lang')
+  || (['ru','es'].includes((navigator.language||'').slice(0,2)) ? (navigator.language||'').slice(0,2) : 'en');
+let filter = 'all', photo = 0;
 
-/* ── State ──────────────────────────────────────────────────────────────── */
-const store = JSON.parse(localStorage.getItem('stay-plan') || '{}');
-let plan = Array.isArray(store.ids) ? store.ids : [];
-const persist = () => localStorage.setItem('stay-plan', JSON.stringify({
-  ids: plan, in: dIn.value, out: dOut.value,
-}));
+const $ = (s) => document.querySelector(s);
+const T = () => STRINGS[lang] || STRINGS.en;
 
-/* ── Dates & weather ────────────────────────────────────────────────────── */
-const dIn = document.getElementById('d-in'), dOut = document.getElementById('d-out');
-const nightsEl = document.getElementById('nights');
-const today = new Date(); today.setHours(0,0,0,0);
-const iso = d => d.toISOString().slice(0,10);
-dIn.min = iso(new Date(today.getTime()+86400000)); /* instant book: 24h lead */
-dOut.min = dIn.min;
-if (store.in) dIn.value = store.in;
-if (store.out) dOut.value = store.out;
-
-const WMO = c =>
-  c===0?'☀️':c<=2?'🌤️':c===3?'☁️':c<=48?'🌫️':c<=57?'🌦️':c<=67?'🌧️':c<=77?'❄️':c<=82?'🌧️':c<=86?'❄️':'⛈️';
-
-let wxReq = 0;
-async function refreshDates(){
-  const req = ++wxReq;
-  const wx = document.getElementById('wx');
-  const head = document.getElementById('wx-head'), note = document.getElementById('wx-note');
-  const days = document.getElementById('wx-days');
-  const a = dIn.value ? new Date(dIn.value+'T00:00:00') : null;
-  const b = dOut.value ? new Date(dOut.value+'T00:00:00') : null;
-  if (a && b && b<=a) { dOut.value=''; return refreshDates(); }
-  const n = a && b ? Math.round((b-a)/86400000) : 0;
-  nightsEl.textContent = n ? `${n} night${n>1?'s':''}${n<2?' — 2-night minimum':''}` : '';
-  persist(); markSeasons(a);
-  if (!a) { wx.hidden = true; return; }
-  wx.hidden = false; days.innerHTML='';
-  const horizon = Math.round((a-today)/86400000);
-  if (horizon <= 14) {
-    head.textContent = 'The forecast for your dates';
-    note.textContent = 'From the same feed the house itself reads. It will refit your plan on the morning sky, day by day.';
-    try {
-      const end = b ? new Date(Math.min(b.getTime(), a.getTime()+6*86400000)) : a;
-      const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&daily=temperature_2m_max,temperature_2m_min,weather_code&temperature_unit=fahrenheit&timezone=America%2FLos_Angeles&start_date=${iso(a)}&end_date=${iso(end)}`);
-      const j = await r.json();
-      if (req !== wxReq) return;
-      days.innerHTML='';
-      (j.daily?.time||[]).forEach((t,i)=>{
-        const el=document.createElement('div'); el.className='wx__day';
-        const dow=new Date(t+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-        el.innerHTML=`<p class="wx__dow">${dow}</p><p class="wx__ico">${WMO(j.daily.weather_code[i])}</p><p class="wx__t"><b>${Math.round(j.daily.temperature_2m_max[i])}°</b> / ${Math.round(j.daily.temperature_2m_min[i])}°</p>`;
-        days.appendChild(el);
-      });
-    } catch { note.textContent = 'Forecast is not reachable right now — the typical month below still holds.'; seasonCard(a, days); }
-  } else {
-    head.textContent = 'Too far out for a forecast — here is a typical ' + a.toLocaleDateString('en-US',{month:'long'});
-    note.textContent = 'Real forecasts reach ~2 weeks. Closer to the trip this becomes day-by-day; on arrival the house lays your plan into the actual weather.';
-    seasonCard(a, days);
+function renderText() {
+  const t = T();
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t[el.dataset.t] ?? ''; });
+  const langsBox = $('#langs');
+  langsBox.innerHTML = '';
+  for (const code of ['en','ru','es']) {
+    const b = document.createElement('button');
+    b.className = 'lang-btn' + (code===lang ? ' on' : '');
+    b.textContent = code.toUpperCase();
+    b.addEventListener('click', () => { lang = code; try { localStorage.setItem('tahoe-landing-lang', code); } catch(e){}; renderText(); renderGallery(); });
+    langsBox.appendChild(b);
   }
+  const am = $('#amenities');
+  am.innerHTML = '';
+  for (const a of t.amenities) { const s=document.createElement('span'); s.className='chip'; s.textContent=a; am.appendChild(s); }
+  const hoa=document.createElement('span'); hoa.className='chip'; hoa.style.cssText='background:#fdf6e6;border-color:#e8dcc0;color:#8a6d2f;'; hoa.textContent=t.amHoa; am.appendChild(hoa);
 }
-function seasonCard(a, box){
-  const m = a.getMonth()+1, [t,txt] = CLIMO[m];
-  const el=document.createElement('div'); el.className='wx__day'; el.style.textAlign='left'; el.style.minWidth='0'; el.style.flex='1';
-  el.innerHTML=`<p class="wx__t" style="font-family:var(--mono)"><b>${t}</b> typical highs/lows</p><p style="font-size:var(--fs-small);color:var(--ink-2);margin-top:4px">${txt}</p>`;
-  box.appendChild(el);
-}
-const seasonOf = m => (m>=6&&m<=9)?'summer':(m===12||m<=3)?'winter':'shoulder';
-function markSeasons(a){
-  const s = a ? seasonOf(a.getMonth()+1) : null;
-  document.querySelectorAll('.act').forEach(el=>{
-    const act = ACTS.find(x=>x.id===el.dataset.id);
-    if (!act) return;
-    const off = s && !(act.s.includes('all')||act.s.includes(s));
-    el.classList.toggle('act--off', !!off);
-    el.querySelector('.act__season').textContent = off ? `a ${act.s.join('/')} thing — likely out of season for your dates` : '';
+
+function renderGallery() {
+  const t = T();
+  const visible = PHOTOS.filter(p => filter==='all' || p.gr===filter);
+  const idx = Math.min(photo, visible.length-1);
+  const featured = visible[idx] ?? PHOTOS[0];
+  const img = $('#featured');
+  if (img.getAttribute('src') !== 'photos/'+featured.id+'.webp') img.src = 'photos/'+featured.id+'.webp';
+  img.alt = t.caps[featured.cap];
+  $('#featured-cap').textContent = t.caps[featured.cap];
+  $('#counter').textContent = (idx+1)+' / '+visible.length;
+  const fbox = $('#filters'); fbox.innerHTML='';
+  for (const f of ['all','out','in','bed']) {
+    const b=document.createElement('button');
+    b.className='filter-btn'+(f===filter?' on':''); b.textContent=t.filters[f];
+    b.addEventListener('click', () => { filter=f; photo=0; renderGallery(); });
+    fbox.appendChild(b);
+  }
+  const tbox = $('#thumbs'); tbox.innerHTML='';
+  visible.forEach((p,i) => {
+    const b=document.createElement('button');
+    b.className='thumb'+(i===idx?' on':''); b.setAttribute('aria-label', t.caps[p.cap]);
+    const im=document.createElement('img'); im.src='photos/'+p.id+'-t.webp'; im.alt=t.caps[p.cap]; im.loading='lazy';
+    b.appendChild(im);
+    b.addEventListener('click', () => { photo=i; renderGallery(); });
+    tbox.appendChild(b);
   });
-}
-dIn.addEventListener('change', refreshDates);
-dOut.addEventListener('change', refreshDates);
-
-/* ── Activity picker ────────────────────────────────────────────────────── */
-const actsBox = document.getElementById('acts');
-for (const a of ACTS) {
-  const el = document.createElement('div'); el.className='act'; el.dataset.id=a.id; el.dataset.cat=a.cat;
-  const details = a.code
-    ? ` · <a href="${GUIDE}/book/${a.code}" target="_blank" rel="noopener">details &amp; book</a>` : '';
-  el.innerHTML = `<div><p class="act__h">${a.name}</p><p class="act__meta">${a.meta}${details}</p><p class="act__season"></p></div>
-    <button class="act__add" aria-label="Add ${a.name} to plan">+ to plan</button>`;
-  el.querySelector('.act__add').addEventListener('click', () => {
-    plan = plan.includes(a.id) ? plan.filter(x=>x!==a.id) : [...plan, a.id];
-    renderPlan();
-  });
-  actsBox.appendChild(el);
+  $('#prev').onclick = () => { photo = (idx-1+visible.length)%visible.length; renderGallery(); };
+  $('#next').onclick = () => { photo = (idx+1)%visible.length; renderGallery(); };
 }
 
-/* Book-a-day-out: the guide's shelves, rendered into the same grid. */
-const BOOK_BY_CODE = {};
-for (const sh of SHELVES) {
-  const head = document.createElement('div');
-  head.className = 'act-shelf'; head.dataset.cat = 'book'; head.style.display = 'none';
-  head.innerHTML = `<span>${sh.title}</span>` + (sh.key
-    ? ` <a href="${GUIDE}/browse/${sh.key}" target="_blank" rel="noopener">see all ${sh.count} →</a>` : '');
-  actsBox.appendChild(head);
-  for (const it of sh.items) {
-    BOOK_BY_CODE[it.code] = it;
-    const el = document.createElement('div');
-    el.className = 'act'; el.dataset.id = it.code; el.dataset.cat = 'book'; el.style.display = 'none';
-    el.innerHTML = `<div><p class="act__h">${it.name}</p><p class="act__meta">${it.pick ? "host's pick · " : ''}<a href="${GUIDE}/book/${it.code}" target="_blank" rel="noopener">details &amp; book</a></p><p class="act__season"></p></div>
-      <button class="act__add" aria-label="Add ${it.name} to plan">+ to plan</button>`;
-    el.querySelector('.act__add').addEventListener('click', () => {
-      plan = plan.includes(it.code) ? plan.filter(x=>x!==it.code) : [...plan, it.code];
-      renderPlan();
-    });
-    actsBox.appendChild(el);
-  }
-}
-
-document.getElementById('chips').addEventListener('click', e => {
-  const b = e.target.closest('.chip'); if (!b) return;
-  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on', c===b));
-  const cat = b.dataset.cat;
-  document.querySelectorAll('.act, .act-shelf').forEach(el=>{ el.style.display = (el.dataset.cat===cat || (cat==='all' && el.dataset.cat!=='book' && !el.classList.contains('act-shelf')))?'':'none'; });
-});
-
-/* ── My plan ────────────────────────────────────────────────────────────── */
-const listEl = document.getElementById('plan-list');
-const countEl = document.getElementById('plan-count');
-const emptyEl = document.getElementById('plan-empty');
-const openEl = document.getElementById('plan-open');
-/* `at-home` items are amenities, not destinations — the guide plans places, so
-   the link carries only ids the guide's plan knows. */
-const nameOf = id => ACTS.find(a=>a.id===id)?.name ?? BOOK_BY_CODE[id]?.name ?? id;
-const linkable = () => plan.filter(id => ACTS.find(a=>a.id===id)?.cat !== 'at-home');
-function planUrl(){ return `${GUIDE}/?plan=${encodeURIComponent(linkable().join(','))}`; }
-function renderPlan(){
-  persist();
-  listEl.innerHTML='';
-  for (const id of plan) {
-    const li=document.createElement('li');
-    li.innerHTML=`<span>${nameOf(id)}</span>`;
-    const rm=document.createElement('button'); rm.className='myplan__rm'; rm.textContent='✕'; rm.setAttribute('aria-label','Remove '+nameOf(id));
-    rm.addEventListener('click',()=>{ plan=plan.filter(x=>x!==id); renderPlan(); });
-    li.appendChild(rm); listEl.appendChild(li);
-  }
-  countEl.textContent = plan.length ? `${plan.length} in the plan` : 'empty';
-  emptyEl.hidden = !!plan.length;
-  openEl.href = linkable().length ? planUrl() : GUIDE + '/';
-  const homeN = plan.length - linkable().length;
-  document.getElementById('plan-home-note').textContent = homeN
-    ? `${homeN} of these (sauna, hot tub…) are already at the house — they need no plan slot, just an evening.` : '';
-  document.querySelectorAll('.act').forEach(el=>{
-    const b=el.querySelector('.act__add'); const inPlan=plan.includes(el.dataset.id);
-    b.classList.toggle('in', inPlan); b.textContent = inPlan ? '✓ in plan' : '+ to plan';
-  });
-}
-document.getElementById('plan-copy').addEventListener('click', async e => {
-  try { await navigator.clipboard.writeText(planUrl()); e.target.textContent='Copied ✓'; }
-  catch { prompt('Copy the plan link:', planUrl()); }
-  setTimeout(()=>{ e.target.textContent='Copy plan link'; }, 1600);
-});
-
-/* ── Channels ───────────────────────────────────────────────────────────── */
-const chBox = document.getElementById('channels');
-for (const c of CHANNELS) {
-  if (c.url) {
-    const a=document.createElement('a'); a.className='btn btn--sm'; a.style.width='100%';
-    a.href=c.url; if (c.url.startsWith('http')) { a.target='_blank'; a.rel='noopener'; }
-    a.textContent=c.name; chBox.appendChild(a);
-  } else {
-    const d=document.createElement('button'); d.className='btn btn--sm'; d.style.width='100%'; d.disabled=true;
-    d.textContent=c.name+' — link coming'; chBox.appendChild(d);
-  }
-}
-
-renderPlan(); refreshDates();
+renderText(); renderGallery();
 </script>
 </body>
 </html>
