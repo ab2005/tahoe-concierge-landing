@@ -3,15 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Rabbit Hole — a tranquil Tahoe retreat with sauna, hot tub, and a concierge</title>
-<meta name="description" content="Paddle the canal, sauna and soak, ski Heavenly ten minutes away. Three bedrooms, up to six guests and two dogs — with an AI concierge that plans your days. From $450 a night.">
+<title>The Rabbit Hole | Tahoe Retreat with Sauna, Hot Tub &amp; Concierge</title>
+<meta name="description" content="Stay at The Rabbit Hole in South Lake Tahoe — a private retreat with sauna, hot tub, a walk to the lake, pet-friendly rooms and your own Tahoe Concierge.">
+<link rel="canonical" href="https://tahoe-concierge.vercel.app/">
 <meta property="og:title" content="The Rabbit Hole — Sauna. Soak. Repeat.">
-<meta property="og:description" content="A tranquil Tahoe retreat with a cedar sauna, hot tub, paddle boards on the canal — and an AI concierge that plans your days, before and during your stay.">
+<meta property="og:description" content="A private Tahoe retreat with a cedar sauna, hot tub, a walk to the lake — and your own Tahoe Concierge, before and during your stay.">
 <meta property="og:image" content="https://tahoe-concierge.vercel.app/photos/ph-deck.webp">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://tahoe-concierge.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Rabbit Hole — Sauna. Soak. Repeat.">
+<meta name="twitter:description" content="A private Tahoe retreat with a cedar sauna, hot tub, a walk to the lake — and your own Tahoe Concierge.">
+<meta name="twitter:image" content="https://tahoe-concierge.vercel.app/photos/ph-deck.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E%F0%9F%90%87%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="photos/ph-deck.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "name": "The Rabbit Hole",
+  "alternateName": "Tahoe Tuolumne",
+  "description": "A private South Lake Tahoe retreat with a cedar sauna, hot tub, paddle boards on the canal, pet-friendly rooms and an AI concierge. 3 bedrooms, 2 baths, sleeps 6.",
+  "url": "https://tahoe-concierge.vercel.app/",
+  "image": [
+    "https://tahoe-concierge.vercel.app/photos/ph-deck.webp",
+    "https://tahoe-concierge.vercel.app/photos/ph-sauna-out.webp",
+    "https://tahoe-concierge.vercel.app/photos/ph-hottub.webp"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "785 Tuolumne Drive",
+    "addressLocality": "South Lake Tahoe",
+    "addressRegion": "CA",
+    "postalCode": "96150",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 38.9244, "longitude": -120.0037 },
+  "petsAllowed": true,
+  "numberOfRooms": 3,
+  "numberOfBathroomsTotal": 2,
+  "occupancy": { "@type": "QuantitativeValue", "value": 6 },
+  "checkinTime": "16:00", "checkoutTime": "10:00",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "3" },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Sauna", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Hot tub", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Paddle boards", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Wi-Fi 250+ Mbps", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Free parking (4 cars)", "value": true }
+  ]
+}
+</script>
 <style>
   body{margin:0;background:#f4f4ef;color:#12140f;font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.55;}
   a{color:#2f6b2f;text-decoration:none;}
@@ -32,10 +77,12 @@
   .btn--md{padding:12px 22px;font-size:15px;}
   .card{background:#fff;border:1px solid #e0e0d6;border-radius:12px;}
   .chip{display:inline-flex;align-items:center;background:#eef2e8;border:1px solid #d5e0c9;color:#24521f;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:5px 12px;white-space:nowrap;}
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
   .g2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;}
   .g2t{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;}
   .g6{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;}
   .dark-tile{background:#1d2117;border:1px solid #2a2f22;border-radius:8px;}
   .navlink{color:#12140f;font-size:14px;}
   .lang-btn{background:none;border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:2px 7px;border-bottom:2px solid transparent;color:#9b9f90;}
@@ -49,148 +96,211 @@
   .thumb img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;}
   .navarr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(18,20,15,.62);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;}
   .navarr:hover{background:rgba(18,20,15,.85);}
+  .sitenav{position:sticky;top:0;z-index:50;background:#f4f4ef;border-bottom:1px solid #e0e0d6;}
+  .drow{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;}
+  .drow:last-child{border-bottom:0;}
+  .dval{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b7060;white-space:nowrap;}
   @media(max-width:780px){
-    .g4,.g2,.g2t{grid-template-columns:1fr;}
+    .g3,.g4,.g2,.g2t,.hero-grid{grid-template-columns:1fr;}
+    .hero-grid{gap:22px;}
     .g6{grid-template-columns:repeat(3,1fr);}
-    .hero-t{font-size:30px !important;}
+    .hero-t{font-size:34px !important;}
     .navlink{display:none;}
     .pad56{padding-top:36px !important;padding-bottom:36px !important;}
-    nav{gap:10px !important;}
-    nav > div:last-child{gap:10px !important;}
-    nav .btn{padding:9px 14px !important;font-size:13px !important;}
+    .sitenav nav{gap:10px !important;}
+    .sitenav nav > div:last-child{gap:10px !important;}
+    .sitenav .btn{padding:9px 14px !important;font-size:13px !important;}
   }
 </style>
 </head>
 <body>
 
-<nav style="display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1020px;margin:0 auto;padding:22px 20px;border-bottom:1px solid #e0e0d6;">
-  <div style="font-weight:700;font-size:19px;letter-spacing:-0.01em;">785&nbsp;Tuolumne</div>
-  <div style="display:flex;gap:22px;align-items:center;font-size:14px;">
-    <a class="navlink" href="#house" data-t="navHouse"></a>
-    <a class="navlink" href="#tour" data-t="navTour"></a>
-    <a class="navlink" href="#concierge" data-t="navConcierge"></a>
-    <span id="langs" style="display:inline-flex;gap:2px;align-items:baseline;"></span>
-    <a class="btn btn--fill" style="padding:10px 20px;font-size:14px;" href="#book" data-t="cta"></a>
-  </div>
-</nav>
+<div class="sitenav">
+  <nav style="display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1020px;margin:0 auto;padding:16px 20px;">
+    <div style="font-weight:700;font-size:19px;letter-spacing:-0.01em;">The&nbsp;Rabbit&nbsp;Hole</div>
+    <div style="display:flex;gap:22px;align-items:center;font-size:14px;">
+      <a class="navlink" href="#house" data-t="navHouse">The house</a>
+      <a class="navlink" href="#tour" data-t="navTour">Photo tour</a>
+      <a class="navlink" href="#concierge" data-t="navConcierge">Concierge</a>
+      <span id="langs" style="display:inline-flex;gap:2px;align-items:baseline;">
+        <button class="lang-btn on" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="es">ES</button>
+      </span>
+      <a class="btn btn--fill" style="padding:10px 20px;font-size:14px;" href="#book" data-t="cta">Book now</a>
+    </div>
+  </nav>
+</div>
 
-<header class="wrap pad56" style="padding-top:56px;padding-bottom:40px;">
-  <p class="label" style="color:#6b7060;margin-bottom:16px;" data-t="heroKicker"></p>
-  <h1 class="hero-t" style="font-size:44px;line-height:1.12;font-weight:700;letter-spacing:-0.015em;max-width:18ch;text-wrap:balance;" data-t="heroTitle"></h1>
-  <p style="font-size:20px;line-height:1.45;color:#4d5245;max-width:44ch;margin-top:18px;" data-t="heroLead"></p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;align-items:center;">
-    <a class="btn btn--fill btn--lg" href="#book" data-t="cta"></a>
-    <a class="btn btn--lg" href="#tour" data-t="ctaTour"></a>
-    <a class="chip" href="#concierge" style="gap:6px;" id="ai-tag">✦ <span data-t="heroAiTag"></span></a>
+<header class="wrap pad56" style="padding-top:44px;padding-bottom:40px;">
+  <div class="hero-grid">
+    <div>
+      <p class="label" style="color:#6b7060;margin-bottom:16px;" data-t="heroKicker">South Lake Tahoe · Tahoe Keys · VHR #334053</p>
+      <h1 class="hero-t" style="font-size:44px;line-height:1.08;font-weight:700;letter-spacing:-0.015em;" data-t="heroTitle">The Rabbit Hole</h1>
+      <p style="font-size:20px;line-height:1.45;color:#4d5245;max-width:40ch;margin-top:12px;" data-t="heroSub">A private Tahoe retreat — sauna, hot tub, a walk to the lake, and your own Tahoe Concierge.</p>
+      <p class="mono" style="font-size:14px;color:#12140f;margin-top:14px;" data-t="heroFacts">3 bedrooms · 2 baths · Sleeps 6 · Pet friendly</p>
+      <p class="mono" style="font-size:13px;color:#6b7060;margin-top:6px;"><a href="https://www.airbnb.com/rooms/1726214996397659568" target="_blank" rel="noopener" style="color:#8a6d2f;" data-t="heroRating">★ 5.0 on Airbnb · Superhost hosts</a></p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center;">
+        <a class="btn btn--fill btn--lg" href="#book" data-t="cta2">Book now</a>
+        <a class="btn btn--lg" href="#tour" data-t="ctaTour">See the house</a>
+      </div>
+      <p style="margin-top:14px;"><a class="chip" href="#concierge" style="gap:6px;">✦ <span data-t="heroAiTag">Meet your Tahoe Concierge</span></a></p>
+      <p class="mono" style="font-size:13px;color:#6b7060;margin-top:12px;" data-t="heroNote">From $450 a night · 2-night minimum · instant booking</p>
+    </div>
+    <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;">
+      <img src="photos/ph-deck.webp" alt="The back deck of The Rabbit Hole: cedar sauna, hot tub, BBQ and lounger under the pines" width="1400" height="700" style="width:100%;height:100%;min-height:320px;aspect-ratio:5/4;object-fit:cover;">
+      <figcaption style="position:absolute;left:14px;bottom:12px;display:inline-flex;align-items:center;gap:7px;background:rgba(18,20,15,0.78);border-radius:999px;padding:7px 13px;font-family:'IBM Plex Mono',monospace;font-size:13px;"><b style="color:#fff;font-weight:500;" data-t="heroCaption">The back deck — sauna, hot tub, grill, and pines.</b></figcaption>
+    </figure>
   </div>
-  <p class="mono" style="font-size:13px;color:#6b7060;margin-top:14px;" data-t="heroNote"></p>
-  <figure style="margin:36px 0 0;border-radius:12px;overflow:hidden;position:relative;">
-    <img src="photos/ph-deck.webp" alt="The back deck: cedar sauna, hot tub, BBQ and lounger" width="1400" height="700" style="width:100%;aspect-ratio:2/1;object-fit:cover;">
-    <figcaption style="position:absolute;left:14px;bottom:12px;display:inline-flex;align-items:center;gap:7px;background:rgba(18,20,15,0.78);border-radius:999px;padding:7px 13px;font-family:'IBM Plex Mono',monospace;font-size:13px;"><b style="color:#fff;font-weight:500;" data-t="heroCaption"></b></figcaption>
-  </figure>
 </header>
 
-<section id="house" class="wrap" style="padding-top:8px;padding-bottom:44px;">
-  <div class="g4">
-    <div class="card" style="padding:20px 18px;">
-      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;">3 + 2</div>
-      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact1"></p>
+<section id="house" class="wrap pad56" style="padding-top:24px;padding-bottom:44px;">
+  <h2 class="label" style="font-size:13px;" data-t="whyLabel">Why this house</h2>
+  <p class="h2" data-t="whyTitle">A different kind of Tahoe stay</p>
+  <div class="g3" style="margin-top:22px;">
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:17px;font-weight:600;" data-t="w1h">Private cedar sauna</h3>
+      <p style="margin-top:6px;font-size:14.5px;color:#4d5245;" data-t="w1p">Hot in 45 minutes — after the slopes, or as the whole evening.</p>
     </div>
-    <div class="card" style="padding:20px 18px;">
-      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;">6 + 2</div>
-      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact2"></p>
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:17px;font-weight:600;" data-t="w2h">Hot tub under the pines</h3>
+      <p style="margin-top:6px;font-size:14.5px;color:#4d5245;" data-t="w2p">Your own soak on the fully fenced back deck.</p>
     </div>
-    <div class="card" style="padding:20px 18px;">
-      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;" data-t="fact3n"></div>
-      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact3"></p>
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:17px;font-weight:600;" data-t="w3h">Walk to the lake</h3>
+      <p style="margin-top:6px;font-size:14.5px;color:#4d5245;" data-t="w3p">Rabbit Hole Beach is about 22 minutes on foot — no car, no parking hunt.</p>
     </div>
-    <div class="card" style="padding:20px 18px;">
-      <div class="mono" style="font-size:22px;font-weight:500;color:#2f6b2f;" data-t="fact4n"></div>
-      <p style="margin-top:7px;font-size:14px;color:#4d5245;" data-t="fact4"></p>
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:17px;font-weight:600;" data-t="w4h">3 bedrooms · 2 baths</h3>
+      <p style="margin-top:6px;font-size:14.5px;color:#4d5245;" data-t="w4p">Two queens up, a full with a trundle — sleeps 6. Wi-Fi 250+ Mbps, parking for 4 cars.</p>
+    </div>
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:17px;font-weight:600;" data-t="w5h">Dogs welcome</h3>
+      <p style="margin-top:6px;font-size:14.5px;color:#4d5245;" data-t="w5p">Up to two well-behaved dogs; $200 pet fee.</p>
+    </div>
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:17px;font-weight:600;" data-t="w6h">Your Tahoe Concierge</h3>
+      <p style="margin-top:6px;font-size:14.5px;color:#4d5245;" data-t="w6p">Ask about the house, dinners, trails or today's plan — talk or type, 24/7.</p>
     </div>
   </div>
 </section>
 
 <section id="tour" class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
-  <p class="label" data-t="tourLabel"></p>
-  <h2 class="h2" data-t="tourTitle"></h2>
-  <p style="color:#4d5245;margin-top:10px;max-width:58ch;" data-t="tourLead"></p>
-  <div id="filters" style="display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 16px;"></div>
+  <h2 class="label" style="font-size:13px;" data-t="tourLabel">Photo tour</h2>
+  <p class="h2" data-t="tourTitle">Walk through the house</p>
+  <p style="color:#4d5245;margin-top:10px;max-width:58ch;" data-t="tourLead">Everything made with love — a cosy living room with a gas fireplace, a fully stocked kitchen, and a backyard built for whole days outside.</p>
+  <div id="filters" style="display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 16px;">
+    <button class="filter-btn on" data-f="all">All photos</button>
+    <button class="filter-btn" data-f="out">Outside</button>
+    <button class="filter-btn" data-f="in">Living &amp; kitchen</button>
+    <button class="filter-btn" data-f="bed">Bedrooms</button>
+  </div>
   <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;">
-    <img id="featured" src="photos/ph-deck.webp" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+    <img id="featured" src="photos/ph-deck.webp" alt="The back deck — sauna, hot tub, grill and loungers." style="width:100%;aspect-ratio:16/9;object-fit:cover;">
     <button class="navarr" style="left:14px;" id="prev" aria-label="Previous photo">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
     </button>
     <button class="navarr" style="right:14px;" id="next" aria-label="Next photo">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
     </button>
-    <span id="counter" style="position:absolute;right:14px;bottom:12px;background:rgba(18,20,15,0.78);color:#c3c8b8;border-radius:999px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;white-space:nowrap;"></span>
+    <span id="counter" style="position:absolute;right:14px;bottom:12px;background:rgba(18,20,15,0.78);color:#c3c8b8;border-radius:999px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;white-space:nowrap;">1 / 15</span>
   </figure>
-  <p id="featured-cap" class="mono" style="margin-top:10px;font-size:14px;color:#6b7060;"></p>
-  <div id="thumbs" class="g6" style="margin-top:14px;"></div>
-  <div id="amenities" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;"></div>
-</section>
-
-<section id="concierge" class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
-  <div style="background:#12140f;color:#c3c8b8;border-radius:12px;padding:34px 32px;">
-    <p class="label" style="color:#8fd07a;">✦ <span data-t="conLabel"></span></p>
-    <h2 class="h2" style="color:#fff;max-width:30ch;" data-t="conTitle"></h2>
-    <p style="margin-top:12px;max-width:60ch;color:#b9c0aa;" data-t="conSub"></p>
-    <div class="g2t" style="margin-top:24px;">
-      <div>
-        <p style="margin:0 0 14px;font-size:15px;"><span data-t="conP1a"></span> <a href="https://tahoe.ai-host.ai" style="color:#8fd07a;">Tahoe Concierge</a><span data-t="conP1b"></span></p>
-        <p style="margin:0 0 16px;font-size:15px;" data-t="conP2"></p>
-        <p class="mono" style="font-size:13px;color:#b9c0aa;border-left:2px solid #8fd07a;padding-left:12px;" data-t="conQuote"></p>
-      </div>
-      <div class="dark-tile" style="padding:6px 18px;">
-        <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #2a2f22;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">01</span><span style="font-size:14.5px;" data-t="step1"></span></div>
-        <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #2a2f22;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">02</span><span style="font-size:14.5px;" data-t="step2"></span></div>
-        <div style="display:flex;gap:14px;padding:12px 0;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">03</span><span style="font-size:14.5px;" data-t="step3"></span></div>
-      </div>
-    </div>
-    <div class="g4" style="margin-top:28px;">
-      <div class="dark-tile" style="padding:16px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><path d="M12 19v3"></path></svg>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap1h"></h3>
-        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap1p"></p>
-      </div>
-      <div class="dark-tile" style="padding:16px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect></svg>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap2h"></h3>
-        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap2p"></p>
-      </div>
-      <div class="dark-tile" style="padding:16px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap3h"></h3>
-        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap3p"></p>
-      </div>
-      <div class="dark-tile" style="padding:16px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap4h"></h3>
-        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap4p"></p>
-      </div>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;">
-      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" id="link-how" href="https://tahoe-guide-landing.vercel.app/" data-t="conBtnHow"></a>
-      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" href="https://tahoe.ai-host.ai/#chat" data-t="conBtnAsk"></a>
-      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="conBtnWa"></a>
-    </div>
+  <p id="featured-cap" class="mono" style="margin-top:10px;font-size:14px;color:#6b7060;">The back deck — sauna, hot tub, grill and loungers.</p>
+  <div id="thumbs" class="g6" style="margin-top:14px;">
+    <button class="thumb on" data-i="0" data-gr="out"><img src="photos/ph-deck-t.webp" alt="The back deck — sauna, hot tub, grill and loungers." loading="lazy"></button>
+    <button class="thumb" data-i="1" data-gr="out"><img src="photos/ph-sauna-out-t.webp" alt="The cedar sauna, with the outdoor shower beside it." loading="lazy"></button>
+    <button class="thumb" data-i="2" data-gr="out"><img src="photos/ph-sauna-in-t.webp" alt="Inside the sauna — benches for the whole family." loading="lazy"></button>
+    <button class="thumb" data-i="3" data-gr="out"><img src="photos/ph-hottub-t.webp" alt="The hot tub, lawn and pines behind." loading="lazy"></button>
+    <button class="thumb" data-i="4" data-gr="out"><img src="photos/ph-firepit-t.webp" alt="The gas fire pit on the stone patio." loading="lazy"></button>
+    <button class="thumb" data-i="5" data-gr="out"><img src="photos/ph-boards-t.webp" alt="Paddle boards, ready for the canal." loading="lazy"></button>
+    <button class="thumb" data-i="6" data-gr="out"><img src="photos/ph-yard-t.webp" alt="The fenced backyard from the lawn." loading="lazy"></button>
+    <button class="thumb" data-i="7" data-gr="in"><img src="photos/ph-living-t.webp" alt="The living room — gas fireplace and a big smart TV." loading="lazy"></button>
+    <button class="thumb" data-i="8" data-gr="in"><img src="photos/ph-living2-t.webp" alt="The living room toward the kitchen and stairs." loading="lazy"></button>
+    <button class="thumb" data-i="9" data-gr="in"><img src="photos/ph-dining-t.webp" alt="The dining table under the antler chandelier." loading="lazy"></button>
+    <button class="thumb" data-i="10" data-gr="in"><img src="photos/ph-kitchen-t.webp" alt="The fully stocked kitchen." loading="lazy"></button>
+    <button class="thumb" data-i="11" data-gr="bed"><img src="photos/ph-bed1-t.webp" alt="Bedroom 1 — queen log bed, bay window seat, upstairs." loading="lazy"></button>
+    <button class="thumb" data-i="12" data-gr="bed"><img src="photos/ph-bed2-t.webp" alt="Bedroom 1 from the window side." loading="lazy"></button>
+    <button class="thumb" data-i="13" data-gr="bed"><img src="photos/ph-bed3-t.webp" alt="Bedroom 2 — queen bed and a desk, upstairs." loading="lazy"></button>
+    <button class="thumb" data-i="14" data-gr="bed"><img src="photos/ph-bed4-t.webp" alt="Bedroom 3 — full bed with a trundle underneath." loading="lazy"></button>
+  </div>
+  <div id="amenities" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;">
+    <span class="chip">Hot tub</span><span class="chip">Cedar sauna</span><span class="chip">Paddle boards</span><span class="chip">Gas fire pit</span><span class="chip">Gas BBQ</span><span class="chip">Hammock</span><span class="chip">Gas fireplace</span><span class="chip">Washer &amp; dryer</span><span class="chip">Ski storage</span><span class="chip">Workspace</span>
+    <span class="chip" id="am-hoa" style="background:#fdf6e6;border-color:#e8dcc0;color:#8a6d2f;" data-t="amHoa">HOA passes: private beach, pool &amp; tennis</span>
   </div>
 </section>
 
 <section class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
   <div class="g2">
-    <img src="photos/ph-trail.webp" alt="A sandy trail through the meadow near the house" loading="lazy" width="1400" height="1050" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
+    <img src="photos/ph-trail.webp" alt="The sandy neighborhood trail toward the lake" loading="lazy" width="1400" height="1050" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;">
     <div>
-      <p class="label" data-t="locLabel"></p>
-      <h2 class="h2" style="margin-bottom:10px;" data-t="locTitle"></h2>
-      <p style="color:#4d5245;margin-bottom:16px;font-size:15px;" data-t="locLead"></p>
+      <h2 class="label" style="font-size:13px;" data-t="walkLabel">The lake</h2>
+      <p class="h2" data-t="walkTitle">Walk to the lake</p>
+      <p style="color:#4d5245;margin-top:10px;font-size:15px;max-width:50ch;" data-t="walkP">Leave the car at the house. The neighborhood path leads to Rabbit Hole Beach — the hosts' own name for Keys Beach — for an easy afternoon or a sunset. About 22 minutes on foot, no fee, no reservation, and dogs are welcome.</p>
+      <p style="margin-top:16px;"><a class="btn btn--md" href="https://www.google.com/maps/dir/?api=1&amp;destination=38.9401%2C-120.0053&amp;origin=785+Tuolumne+Drive+South+Lake+Tahoe&amp;travelmode=walking" target="_blank" rel="noopener" data-t="walkBtn">Walking directions</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="concierge" class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
+  <div style="background:#12140f;color:#c3c8b8;border-radius:12px;padding:34px 32px;">
+    <h2 class="label" style="color:#8fd07a;font-size:13px;">✦ <span data-t="conLabel">The distinguishing feature</span></h2>
+    <p class="h2" style="color:#fff;max-width:30ch;" data-t="conTitle">Meet your Tahoe Concierge — an advanced AI agent, in service of your stay</p>
+    <p style="margin-top:12px;max-width:60ch;color:#b9c0aa;" data-t="conSub">Not a chatbot with canned answers: an AI agent built by the owner on frontier models, with real knowledge of this house, this lake, and your dates — and the agency to plan, replan, and act on your behalf.</p>
+    <div class="g2t" style="margin-top:24px;">
+      <div>
+        <p style="margin:0 0 14px;font-size:15px;"><span data-t="conP1a">Every booking comes with</span> <a href="https://tahoe.ai-host.ai" style="color:#8fd07a;">Tahoe Concierge</a><span data-t="conP1b"> — a guide to this house and the lake, built by the owner. Open it the day you book: enter your dates and start planning with an AI concierge that knows the area, the house, and the season. Beaches we return to, trails by difficulty, around two hundred bookable tours and rentals — talk it through in chat or out loud on the phone, and keep what fits in your plan.</span></p>
+        <p style="margin:0 0 16px;font-size:15px;" data-t="conP2">Then you arrive, and the plan goes to work. The first screen shows the weather at the house and a live camera on the lake; if the day changes, the concierge reshuffles the plan — kayaks slide to tomorrow, the sauna moves up to today. Every house question — how the sauna heats, when trash goes out — is one question away, in chat or by phone with no internet at all.</p>
+        <p class="mono" style="font-size:13px;color:#b9c0aa;border-left:2px solid #8fd07a;padding-left:12px;" data-t="conQuote">Plan before you arrive. Let the weather change. The plan keeps up.</p>
+      </div>
+      <div class="dark-tile" style="padding:6px 18px;">
+        <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #2a2f22;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">01</span><span style="font-size:14.5px;" data-t="step1">Book the house — the guide link arrives with your confirmation</span></div>
+        <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #2a2f22;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">02</span><span style="font-size:14.5px;" data-t="step2">Build your plan with the concierge before you arrive</span></div>
+        <div style="display:flex;gap:14px;padding:12px 0;align-items:baseline;"><span class="mono" style="font-size:13px;color:#8fd07a;">03</span><span style="font-size:14.5px;" data-t="step3">Live it out — the plan adjusts to each day's weather</span></div>
+      </div>
+    </div>
+    <div class="g4" style="margin-top:28px;">
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><path d="M12 19v3"></path></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap1h">Talks like a person</h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap1p">Voice on the house's own phone number and text in chat — interrupt it mid-sentence, it stops and listens. No app, no account.</p>
+      </div>
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap2h">Plans and replans</h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap2p">Builds your itinerary from your dates and interests, resolves conflicts, and reshuffles the plan when the day changes.</p>
+      </div>
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap3h">Reads the sky</h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap3p">Watches the forecast and the live lake cam — kayaks slide to tomorrow, the sauna moves up to today.</p>
+      </div>
+      <div class="dark-tile" style="padding:16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fd07a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:8px 0 4px;" data-t="cap4h">Knows the house</h3>
+        <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap4p">The sauna, the hot tub, the trash days, the door code rule — every answer in the owner's own words.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;">
+      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" href="https://tahoe.ai-host.ai/#chat" data-t="conBtnAsk">Ask the concierge</a>
+      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" id="link-how" href="https://tahoe-guide-landing.vercel.app/" data-t="conBtnHow">How the concierge works</a>
+      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="conBtnWa">WhatsApp the owner</a>
+    </div>
+    <p class="mono" style="font-size:12px;color:#9aa189;margin-top:18px;" data-t="conDisc">Tahoe Concierge is an AI assistant powered by AI-HOST™. It can make mistakes — confirm what matters, and an emergency is always 911.</p>
+    <p class="mono" style="font-size:12px;color:#9aa189;margin-top:4px;" data-t="conCredit">Powered by AI-HOST™ · technology by New-I, Inc.</p>
+  </div>
+</section>
+
+<section class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
+  <div class="g2">
+    <img src="photos/ph-hammock.webp" alt="A hammock strung between the pines beside the house" loading="lazy" width="1400" height="933" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;" onerror="this.src='photos/ph-yard.webp'">
+    <div>
+      <h2 class="label" style="font-size:13px;" data-t="locLabel">The location</h2>
+      <p class="h2" style="margin-bottom:10px;" data-t="locTitle">The quiet edge of the Tahoe Keys</p>
+      <p style="color:#4d5245;margin-bottom:16px;font-size:15px;" data-t="locLead">Next to the canal for morning paddles, in a residential neighbourhood families come back to year after year. The Keys' private beach is a walk away with an HOA pass; groceries are six minutes by car.</p>
       <div class="card" style="border-radius:8px;padding:6px 16px;font-size:14.5px;">
-        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d1"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;" data-t="d1v"></span></div>
-        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d2"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">1.6 mi · 2.6 km</span></div>
-        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d3"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">5.7 mi · 9.2 km</span></div>
-        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed #e0e0d6;align-items:baseline;"><span data-t="d4"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">6 mi · 9.7 km</span></div>
-        <div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;align-items:baseline;"><span data-t="d5"></span><span class="mono" style="font-size:13px;color:#6b7060;white-space:nowrap;">6.6 mi · 10.6 km</span></div>
+        <div class="drow"><span data-t="d1">Rabbit Hole Beach (Keys private beach)</span><span class="dval" data-t="d1v">22 min walk</span></div>
+        <div class="drow"><span data-t="d2">Raley's grocery</span><span class="dval" data-t="d2v">6 min drive · 1.6 mi</span></div>
+        <div class="drow"><span data-t="d3">Heavenly Ski Resort</span><span class="dval" data-t="d3v">10 min drive · 6.6 mi</span></div>
+        <div class="drow"><span data-t="d4">Stateline casinos</span><span class="dval" data-t="d4v">12 min drive · 6 mi</span></div>
+        <div class="drow"><span data-t="d5">Heavenly Village &amp; gondola</span><span class="dval" data-t="d5v">15 min drive · 5.7 mi</span></div>
       </div>
     </div>
   </div>
@@ -198,20 +308,20 @@
 
 <section class="wrap pad56" style="padding-top:44px;padding-bottom:44px;">
   <div style="max-width:660px;">
-    <p class="label" data-t="honLabel"></p>
-    <h2 class="h2" style="margin-bottom:18px;" data-t="honTitle"></h2>
+    <h2 class="label" style="font-size:13px;" data-t="honLabel">The honest part</h2>
+    <p class="h2" style="margin-bottom:18px;" data-t="honTitle">Worth knowing before you book</p>
     <div class="card">
       <div style="padding:16px 18px;border-bottom:1px solid #e0e0d6;">
-        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon1h"></h3>
-        <p style="font-size:14.5px;color:#4d5245;" data-t="hon1p"></p>
+        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon1h">It's a real neighbourhood</h3>
+        <p style="font-size:14.5px;color:#4d5245;" data-t="hon1p">Quiet hours 10pm–8am, hot tub closes at 10 — county law, strictly kept. No parties, no smoking anywhere on the property, 25+ to book.</p>
       </div>
       <div style="padding:16px 18px;border-bottom:1px solid #e0e0d6;">
-        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon2h"></h3>
-        <p style="font-size:14.5px;color:#4d5245;" data-t="hon2p"></p>
+        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon2h">It's the mountains</h3>
+        <p style="font-size:14.5px;color:#4d5245;" data-t="hon2p">No AC — July afternoons can reach the 80s °F (high 20s °C); we provide fans. Summer evenings bring mosquitos near the water (repellent under the kitchen sink). Winter needs chains, and bears will inspect an unlocked car.</p>
       </div>
       <div style="padding:16px 18px;">
-        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon3h"></h3>
-        <p style="font-size:14.5px;color:#4d5245;" data-t="hon3p"></p>
+        <h3 style="font-weight:600;font-size:16px;margin-bottom:4px;" data-t="hon3h">Dogs are welcome, properly</h3>
+        <p style="font-size:14.5px;color:#4d5245;" data-t="hon3p">Up to two potty-trained dogs, $200 pet fee added to the reservation, off the furniture, leashed on walks.</p>
       </div>
     </div>
   </div>
@@ -219,91 +329,86 @@
 
 <section id="book" class="wrap pad56" style="padding-top:44px;padding-bottom:8px;">
   <div class="g2" style="gap:0;background:#fff;border:1px solid #e0e0d6;border-radius:12px;overflow:hidden;align-items:stretch;">
-    <img src="photos/ph-porch.webp" alt="The front porch with the carved bear" loading="lazy" style="width:100%;height:100%;object-fit:cover;min-height:320px;">
+    <img src="photos/ph-porch.webp" alt="The front porch of The Rabbit Hole with the carved bear" loading="lazy" style="width:100%;height:100%;object-fit:cover;min-height:320px;">
     <div style="padding:28px 26px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;">
-      <p class="label" style="margin:0;" data-t="bookLabel"></p>
-      <h2 class="h2" data-t="bookTitle"></h2>
-      <p style="font-size:14.5px;color:#4d5245;" data-t="bookLead"></p>
+      <h2 class="label" style="margin:0;font-size:13px;" data-t="bookLabel">Booking</h2>
+      <p class="h2" data-t="bookTitle">Book where you're comfortable</p>
+      <p style="font-size:14.5px;color:#4d5245;" data-t="bookLead">The house is listed on all major platforms — same home, same hosts, and booking direct is always welcome. From $450 a night plus cleaning, two-night minimum, instant booking. Check-in 4pm by door code, checkout 10am. Full refund up to 14 days before arrival on most channels.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
-        <a class="btn btn--fill btn--md" href="https://book.summittahoerentals.com/listings/568838" target="_blank" rel="noopener" data-t="bookDirect"></a>
+        <a class="btn btn--fill btn--md" href="https://book.summittahoerentals.com/listings/568838" target="_blank" rel="noopener" data-t="bookDirect">Book direct</a>
         <a class="btn btn--md" href="https://www.airbnb.com/rooms/1726214996397659568" target="_blank" rel="noopener">Airbnb</a>
         <a class="btn btn--md" href="https://www.vrbo.com/5384744" target="_blank" rel="noopener">Vrbo</a>
         <a class="btn btn--md" href="https://www.booking.com/hotel/us/tahoe-tuolumne-sauna-soak-repeat.html" target="_blank" rel="noopener">Booking.com</a>
         <a class="btn btn--md" href="https://www.google.com/travel/hotels/entity/CgsQ_4-3lqmQ2ubrARAC/overview" target="_blank" rel="noopener">Google</a>
       </div>
-      <p class="mono" style="font-size:13px;color:#6b7060;margin-top:4px;"><span data-t="bookAsk1"></span> <a href="https://tahoe.ai-host.ai/#chat" data-t="bookAsk2"></a> — <span data-t="bookAsk3"></span> <a href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="bookAskWa"></a></p>
+      <p class="mono" style="font-size:13px;color:#6b7060;margin-top:4px;"><span data-t="bookAsk1">Questions before booking?</span> <a href="https://tahoe.ai-host.ai/#chat" data-t="bookAsk2">Ask the concierge</a> — <span data-t="bookAsk3">most of the guide is open to everyone.</span> <a href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="bookAskWa">Or WhatsApp the owner directly.</a></p>
     </div>
   </div>
 </section>
 
 <footer class="wrap" style="margin-top:48px;padding-top:40px;padding-bottom:56px;border-top:1px solid #e0e0d6;">
-  <p style="font-size:14.5px;color:#6b7060;max-width:56ch;margin-bottom:14px;" data-t="footP"></p>
+  <p style="font-size:14.5px;color:#12140f;margin-bottom:6px;font-weight:600;" data-t="foot1">The Rabbit Hole · 785 Tuolumne Drive, South Lake Tahoe · VHR permit #334053 · hosted by Summit Tahoe</p>
+  <p style="font-size:14.5px;color:#6b7060;max-width:60ch;margin-bottom:14px;" data-t="foot2">Tahoe Concierge is powered by AI-HOST™, a platform by New-I, Inc.</p>
   <div style="display:flex;gap:20px;font-size:14.5px;flex-wrap:wrap;">
-    <a href="https://tahoe.ai-host.ai" data-t="footGuide"></a>
-    <a id="link-how-foot" href="https://tahoe-guide-landing.vercel.app/" data-t="footHow"></a>
-    <a href="https://tahoe.ai-host.ai/policy" data-t="footPolicy"></a>
-    <a href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="footWa"></a>
+    <a href="https://tahoe.ai-host.ai" data-t="footGuide">Open the guide</a>
+    <a id="link-how-foot" href="https://tahoe-guide-landing.vercel.app/" data-t="footHow">How the concierge works</a>
+    <a href="https://tahoe.ai-host.ai/policy" data-t="footPolicy">Privacy &amp; AI disclosure</a>
+    <a href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="footWa">WhatsApp the owner</a>
   </div>
-  <p class="mono" style="margin-top:22px;padding-top:14px;border-top:1px solid #e0e0d6;font-size:12px;color:#9b9f90;">Tahoe&nbsp;Concierge by new-i.ai · © 2026 new-i.ai · ai-host.ai™ · VHR Permit #334053</p>
+  <p class="mono" style="margin-top:22px;padding-top:14px;border-top:1px solid #e0e0d6;font-size:12px;color:#9b9f90;" data-t="footCopy">Property content © 2026 the hosts · Concierge technology © 2026 New-I, Inc. · AI-HOST™ is a trademark of New-I, Inc.</p>
 </footer>
 
 <script>
-const PHOTOS = [
-  { id: 'ph-deck', cap: 'pDeck', gr: 'out' },
-  { id: 'ph-sauna-out', cap: 'pSaunaOut', gr: 'out' },
-  { id: 'ph-sauna-in', cap: 'pSaunaIn', gr: 'out' },
-  { id: 'ph-hottub', cap: 'pHotTub', gr: 'out' },
-  { id: 'ph-firepit', cap: 'pFirePit', gr: 'out' },
-  { id: 'ph-boards', cap: 'pBoards', gr: 'out' },
-  { id: 'ph-yard', cap: 'pYard', gr: 'out' },
-  { id: 'ph-living', cap: 'pLiving', gr: 'in' },
-  { id: 'ph-living2', cap: 'pLiving2', gr: 'in' },
-  { id: 'ph-dining', cap: 'pDining', gr: 'in' },
-  { id: 'ph-kitchen', cap: 'pKitchen', gr: 'in' },
-  { id: 'ph-bed1', cap: 'pBed1', gr: 'bed' },
-  { id: 'ph-bed2', cap: 'pBed2', gr: 'bed' },
-  { id: 'ph-bed3', cap: 'pBed3', gr: 'bed' },
-  { id: 'ph-bed4', cap: 'pBed4', gr: 'bed' }
-];
+const CAP_KEYS = ['pDeck','pSaunaOut','pSaunaIn','pHotTub','pFirePit','pBoards','pYard','pLiving','pLiving2','pDining','pKitchen','pBed1','pBed2','pBed3','pBed4'];
+const PHOTO_IDS = ['ph-deck','ph-sauna-out','ph-sauna-in','ph-hottub','ph-firepit','ph-boards','ph-yard','ph-living','ph-living2','ph-dining','ph-kitchen','ph-bed1','ph-bed2','ph-bed3','ph-bed4'];
 
 const STRINGS = {
   en: {
-    conBtnHow: 'How the concierge works',
-    conBtnAsk: 'Ask the concierge',
-    conBtnWa: 'WhatsApp the owner',
-    bookAskWa: 'Or WhatsApp the owner directly.',
-    footHow: 'How the concierge works',
-    footWa: 'WhatsApp the owner',
-    navHouse: 'The house', navTour: 'Photo tour', navConcierge: 'Concierge', cta: 'Check dates', ctaTour: 'See the house',
-    heroKicker: 'South Lake Tahoe · Tahoe Keys · Sleeps 6 · Pet friendly',
-    heroTitle: 'A tranquil Tahoe retreat — sauna, hot tub, and a concierge',
-    heroLead: "Paddle the canal before the kids wake up, sauna and soak while the coffee brews, ski Heavenly ten minutes away, and end the night around the gas fire pit. Three bedrooms, two baths, up to six guests and two well-behaved dogs — with an AI concierge that plans your days and answers any question, before and during your stay.",
+    navHouse: 'The house', navTour: 'Photo tour', navConcierge: 'Concierge', cta: 'Book now', cta2: 'Book now', ctaTour: 'See the house',
+    heroKicker: 'South Lake Tahoe · Tahoe Keys · VHR #334053',
+    heroTitle: 'The Rabbit Hole',
+    heroSub: 'A private Tahoe retreat — sauna, hot tub, a walk to the lake, and your own Tahoe Concierge.',
+    heroFacts: '3 bedrooms · 2 baths · Sleeps 6 · Pet friendly',
+    heroRating: '★ 5.0 on Airbnb · Superhost hosts',
     heroNote: 'From $450 a night · 2-night minimum · instant booking',
     heroCaption: 'The back deck — sauna, hot tub, grill, and pines.',
-    fact1: 'Bedrooms and baths — two queens up, a full with trundle for the kids',
-    fact2: 'Guests, plus up to two well-behaved dogs — the deck is fully fenced',
-    fact3n: '10 min', fact3: 'To Heavenly Ski Resort; the Tahoe Keys canal is a walk with a paddle board',
-    fact4n: '4 cars', fact4: 'Two in the garage, two on the driveway — and 250+ Mbps Wi-Fi inside',
+    heroAiTag: 'Meet your Tahoe Concierge',
+    whyLabel: 'Why this house', whyTitle: 'A different kind of Tahoe stay',
+    w1h: 'Private cedar sauna', w1p: 'Hot in 45 minutes — after the slopes, or as the whole evening.',
+    w2h: 'Hot tub under the pines', w2p: 'Your own soak on the fully fenced back deck.',
+    w3h: 'Walk to the lake', w3p: 'Rabbit Hole Beach is about 22 minutes on foot — no car, no parking hunt.',
+    w4h: '3 bedrooms · 2 baths', w4p: 'Two queens up, a full with a trundle — sleeps 6. Wi-Fi 250+ Mbps, parking for 4 cars.',
+    w5h: 'Dogs welcome', w5p: 'Up to two well-behaved dogs; $200 pet fee.',
+    w6h: 'Your Tahoe Concierge', w6p: "Ask about the house, dinners, trails or today's plan — talk or type, 24/7.",
     tourLabel: 'Photo tour', tourTitle: 'Walk through the house',
     tourLead: 'Everything made with love — a cosy living room with a gas fireplace, a fully stocked kitchen, and a backyard built for whole days outside.',
     amenities: ['Hot tub', 'Cedar sauna', 'Paddle boards', 'Gas fire pit', 'Gas BBQ', 'Hammock', 'Gas fireplace', 'Washer & dryer', 'Ski storage', 'Workspace'],
     amHoa: 'HOA passes: private beach, pool & tennis',
-    heroAiTag: 'AI concierge included',
-    conLabel: 'The distinguishing feature', conTitle: 'Tahoe Concierge — an advanced AI agent, in service of your stay',
+    walkLabel: 'The lake', walkTitle: 'Walk to the lake',
+    walkP: "Leave the car at the house. The neighborhood path leads to Rabbit Hole Beach — the hosts' own name for Keys Beach — for an easy afternoon or a sunset. About 22 minutes on foot, no fee, no reservation, and dogs are welcome.",
+    walkBtn: 'Walking directions',
+    conLabel: 'The distinguishing feature', conTitle: 'Meet your Tahoe Concierge — an advanced AI agent, in service of your stay',
     conSub: 'Not a chatbot with canned answers: an AI agent built by the owner on frontier models, with real knowledge of this house, this lake, and your dates — and the agency to plan, replan, and act on your behalf.',
-    cap1h: 'Talks like a person', cap1p: 'Voice on the house’s own phone number and text in chat — interrupt it mid-sentence, it stops and listens. No app, no account.',
+    cap1h: 'Talks like a person', cap1p: "Voice on the house's own phone number and text in chat — interrupt it mid-sentence, it stops and listens. No app, no account.",
     cap2h: 'Plans and replans', cap2p: 'Builds your itinerary from your dates and interests, resolves conflicts, and reshuffles the plan when the day changes.',
     cap3h: 'Reads the sky', cap3p: 'Watches the forecast and the live lake cam — kayaks slide to tomorrow, the sauna moves up to today.',
-    cap4h: 'Knows the house', cap4p: 'The sauna, the hot tub, the trash days, the door code rule — every answer in the owner’s own words.',
+    cap4h: 'Knows the house', cap4p: "The sauna, the hot tub, the trash days, the door code rule — every answer in the owner's own words.",
     conP1a: 'Every booking comes with', conP1b: ' — a guide to this house and the lake, built by the owner. Open it the day you book: enter your dates and start planning with an AI concierge that knows the area, the house, and the season. Beaches we return to, trails by difficulty, around two hundred bookable tours and rentals — talk it through in chat or out loud on the phone, and keep what fits in your plan.',
     conP2: "Then you arrive, and the plan goes to work. The first screen shows the weather at the house and a live camera on the lake; if the day changes, the concierge reshuffles the plan — kayaks slide to tomorrow, the sauna moves up to today. Every house question — how the sauna heats, when trash goes out — is one question away, in chat or by phone with no internet at all.",
     conQuote: 'Plan before you arrive. Let the weather change. The plan keeps up.',
     step1: 'Book the house — the guide link arrives with your confirmation',
     step2: 'Build your plan with the concierge before you arrive',
     step3: "Live it out — the plan adjusts to each day's weather",
+    conBtnAsk: 'Ask the concierge', conBtnHow: 'How the concierge works', conBtnWa: 'WhatsApp the owner',
+    conDisc: 'Tahoe Concierge is an AI assistant powered by AI-HOST™. It can make mistakes — confirm what matters, and an emergency is always 911.',
+    conCredit: 'Powered by AI-HOST™ · technology by New-I, Inc.',
     locLabel: 'The location', locTitle: 'The quiet edge of the Tahoe Keys',
     locLead: "Next to the canal for morning paddles, in a residential neighbourhood families come back to year after year. The Keys' private beach is a walk away with an HOA pass; groceries are six minutes by car.",
-    d1: 'Tahoe Keys private beach', d1v: 'walking', d2: "Raley's grocery", d3: 'Heavenly Village & gondola', d4: 'Stateline casinos', d5: 'Heavenly Ski Resort',
+    d1: 'Rabbit Hole Beach (Keys private beach)', d1v: '22 min walk',
+    d2: "Raley's grocery", d2v: '6 min drive · 1.6 mi',
+    d3: 'Heavenly Ski Resort', d3v: '10 min drive · 6.6 mi',
+    d4: 'Stateline casinos', d4v: '12 min drive · 6 mi',
+    d5: 'Heavenly Village & gondola', d5v: '15 min drive · 5.7 mi',
     honLabel: 'The honest part', honTitle: 'Worth knowing before you book',
     hon1h: "It's a real neighbourhood",
     hon1p: 'Quiet hours 10pm–8am, hot tub closes at 10 — county law, strictly kept. No parties, no smoking anywhere on the property, 25+ to book.',
@@ -315,8 +420,11 @@ const STRINGS = {
     bookLead: 'The house is listed on all major platforms — same home, same hosts, and booking direct is always welcome. From $450 a night plus cleaning, two-night minimum, instant booking. Check-in 4pm by door code, checkout 10am. Full refund up to 14 days before arrival on most channels.',
     bookDirect: 'Book direct',
     bookAsk1: 'Questions before booking?', bookAsk2: 'Ask the concierge', bookAsk3: 'most of the guide is open to everyone.',
-    footP: 'A family home in the pines, hosted with care by Summit Tahoe — and a guide built by the owner so your time here goes to the lake.',
-    footGuide: 'Open the guide', footPolicy: 'How the guide works',
+    bookAskWa: 'Or WhatsApp the owner directly.',
+    foot1: 'The Rabbit Hole · 785 Tuolumne Drive, South Lake Tahoe · VHR permit #334053 · hosted by Summit Tahoe',
+    foot2: 'Tahoe Concierge is powered by AI-HOST™, a platform by New-I, Inc.',
+    footGuide: 'Open the guide', footHow: 'How the concierge works', footPolicy: 'Privacy & AI disclosure', footWa: 'WhatsApp the owner',
+    footCopy: 'Property content © 2026 the hosts · Concierge technology © 2026 New-I, Inc. · AI-HOST™ is a trademark of New-I, Inc.',
     filters: { all: 'All photos', out: 'Outside', in: 'Living & kitchen', bed: 'Bedrooms' },
     caps: {
       pDeck: 'The back deck — sauna, hot tub, grill and loungers.',
@@ -337,28 +445,30 @@ const STRINGS = {
     }
   },
   ru: {
-    conBtnHow: 'Как устроен консьерж',
-    conBtnAsk: 'Спросить консьержа',
-    conBtnWa: 'WhatsApp хозяину',
-    bookAskWa: 'Или напишите хозяину в WhatsApp.',
-    footHow: 'Как устроен консьерж',
-    footWa: 'WhatsApp хозяину',
-    navHouse: 'Дом', navTour: 'Фото-тур', navConcierge: 'Консьерж', cta: 'Проверить даты', ctaTour: 'Посмотреть дом',
-    heroKicker: 'Саут-Лейк-Тахо · Tahoe Keys · До 6 гостей · Можно с собаками',
-    heroTitle: 'Тихий дом у Тахо — сауна, джакузи и консьерж',
-    heroLead: 'Утром — сап-борд по каналу, пока дети спят; сауна и джакузи, пока варится кофе; десять минут до склонов Heavenly — и вечер у газового костра. Три спальни, две ванные, до шести гостей и двух воспитанных собак — и ИИ-консьерж, который планирует ваши дни и отвечает на любой вопрос, до и во время поездки.',
+    navHouse: 'Дом', navTour: 'Фото-тур', navConcierge: 'Консьерж', cta: 'Забронировать', cta2: 'Забронировать', ctaTour: 'Посмотреть дом',
+    heroKicker: 'Саут-Лейк-Тахо · Tahoe Keys · VHR #334053',
+    heroTitle: 'The Rabbit Hole',
+    heroSub: 'Частный дом у Тахо — сауна, джакузи, пешком до озера и собственный Tahoe Concierge.',
+    heroFacts: '3 спальни · 2 ванные · до 6 гостей · можно с собаками',
+    heroRating: '★ 5.0 на Airbnb · хозяева-Superhost',
     heroNote: 'От $450 за ночь · минимум 2 ночи · мгновенное бронирование',
     heroCaption: 'Задняя палуба — сауна, джакузи, гриль и сосны.',
-    fact1: 'Спальни и ванные — две queen-кровати наверху и full с выдвижной для детей',
-    fact2: 'Гостей, плюс до двух воспитанных собак — палуба полностью огорожена',
-    fact3n: '10 мин', fact3: 'До курорта Heavenly; канал Tahoe Keys — в двух шагах, сап-борды в комплекте',
-    fact4n: '4 машины', fact4: 'Две в гараже, две на подъезде — и Wi-Fi 250+ Мбит/с в доме',
+    heroAiTag: 'Познакомьтесь с Tahoe Concierge',
+    whyLabel: 'Почему этот дом', whyTitle: 'Другой отдых на Тахо',
+    w1h: 'Своя кедровая сауна', w1p: 'Горячая за 45 минут — после склонов или как целый вечер.',
+    w2h: 'Джакузи под соснами', w2p: 'Собственное джакузи на полностью огороженной палубе.',
+    w3h: 'Пешком до озера', w3p: 'Rabbit Hole Beach — около 22 минут пешком: без машины и поиска парковки.',
+    w4h: '3 спальни · 2 ванные', w4p: 'Две queen-кровати наверху и full с выдвижной — до 6 гостей. Wi-Fi 250+ Мбит/с, парковка на 4 машины.',
+    w5h: 'С собаками можно', w5p: 'До двух воспитанных собак; сбор $200.',
+    w6h: 'Ваш Tahoe Concierge', w6p: 'Спросите про дом, ужины, тропы или план на сегодня — голосом или текстом, 24/7.',
     tourLabel: 'Фото-тур', tourTitle: 'Пройдитесь по дому',
     tourLead: 'Всё сделано с любовью — уютная гостиная с газовым камином, полностью укомплектованная кухня и двор, созданный для целых дней на воздухе.',
     amenities: ['Джакузи', 'Кедровая сауна', 'Сап-борды', 'Газовый костёр', 'Газовый гриль', 'Гамак', 'Газовый камин', 'Стиральная и сушильная', 'Хранение лыж', 'Рабочее место'],
     amHoa: 'Пропуска HOA: частный пляж, бассейн и теннис',
-    heroAiTag: 'ИИ-консьерж в комплекте',
-    conLabel: 'Главное отличие', conTitle: 'Tahoe Concierge — продвинутый ИИ-агент на службе вашей поездки',
+    walkLabel: 'Озеро', walkTitle: 'Пешком до озера',
+    walkP: 'Оставьте машину у дома. Соседская тропа приводит на Rabbit Hole Beach — так хозяева зовут Keys Beach — на лёгкий день или закат. Около 22 минут пешком, без платы и брони, с собаками можно.',
+    walkBtn: 'Пешеходный маршрут',
+    conLabel: 'Главное отличие', conTitle: 'Ваш Tahoe Concierge — продвинутый ИИ-агент на службе поездки',
     conSub: 'Не чат-бот с готовыми ответами: ИИ-агент, построенный владельцем на передовых моделях, со знанием этого дома, этого озера и ваших дат — и с полномочиями планировать, перестраивать и действовать за вас.',
     cap1h: 'Говорит по-человечески', cap1p: 'Голос на собственном номере дома и текст в чате — перебейте на полуслове, он замолчит и выслушает. Без приложения и аккаунта.',
     cap2h: 'Планирует и перестраивает', cap2p: 'Собирает маршрут из ваших дат и интересов, разводит конфликты и пересобирает план, когда день меняется.',
@@ -370,9 +480,16 @@ const STRINGS = {
     step1: 'Забронируйте дом — ссылка на гид придёт с подтверждением',
     step2: 'Соберите план с консьержем до приезда',
     step3: 'Живите по плану — он подстраивается под погоду каждого дня',
+    conBtnAsk: 'Спросить консьержа', conBtnHow: 'Как устроен консьерж', conBtnWa: 'WhatsApp хозяину',
+    conDisc: 'Tahoe Concierge — ИИ-ассистент на платформе AI-HOST™. Он может ошибаться: важное проверяйте, а экстренный случай — всегда 911.',
+    conCredit: 'Работает на AI-HOST™ · технология New-I, Inc.',
     locLabel: 'Локация', locTitle: 'Тихий край Tahoe Keys',
     locLead: 'Рядом канал для утренних заплывов, вокруг — жилой район, куда семьи возвращаются год за годом. Частный пляж Keys — пешком с пропуском HOA; продукты — шесть минут на машине.',
-    d1: 'Частный пляж Tahoe Keys', d1v: 'пешком', d2: 'Супермаркет Raley’s', d3: 'Heavenly Village и гондола', d4: 'Казино Stateline', d5: 'Курорт Heavenly',
+    d1: 'Rabbit Hole Beach (частный пляж Keys)', d1v: '22 мин пешком',
+    d2: 'Супермаркет Raley’s', d2v: '6 мин на машине · 2.6 км',
+    d3: 'Курорт Heavenly', d3v: '10 мин на машине · 10.6 км',
+    d4: 'Казино Stateline', d4v: '12 мин на машине · 9.7 км',
+    d5: 'Heavenly Village и гондола', d5v: '15 мин на машине · 9.2 км',
     honLabel: 'Честная часть', honTitle: 'Что стоит знать до брони',
     hon1h: 'Это настоящий жилой район',
     hon1p: 'Тихие часы 22:00–8:00, джакузи закрывается в 22:00 — закон округа, соблюдается строго. Без вечеринок, курение запрещено везде на участке, бронь от 25 лет.',
@@ -384,8 +501,11 @@ const STRINGS = {
     bookLead: 'Дом размещён на всех крупных площадках — тот же дом, те же хозяева, а прямая бронь всегда приветствуется. От $450 за ночь плюс уборка, минимум две ночи, мгновенная бронь. Заезд в 16:00 по коду двери, выезд в 10:00. Полный возврат до 14 дней до заезда на большинстве каналов.',
     bookDirect: 'Прямая бронь',
     bookAsk1: 'Вопросы до брони?', bookAsk2: 'Спросите консьержа', bookAsk3: 'большая часть гида открыта всем.',
-    footP: 'Семейный дом среди сосен, под заботливым управлением Summit Tahoe — и гид, построенный владельцем, чтобы ваше время здесь уходило на озеро.',
-    footGuide: 'Открыть гид', footPolicy: 'Как устроен гид',
+    bookAskWa: 'Или напишите хозяину в WhatsApp.',
+    foot1: 'The Rabbit Hole · 785 Tuolumne Drive, Саут-Лейк-Тахо · разрешение VHR #334053 · управляется Summit Tahoe',
+    foot2: 'Tahoe Concierge работает на AI-HOST™ — платформе компании New-I, Inc.',
+    footGuide: 'Открыть гид', footHow: 'Как устроен консьерж', footPolicy: 'Приватность и ИИ-раскрытие', footWa: 'WhatsApp хозяину',
+    footCopy: 'Контент о доме © 2026 хозяева · Технология консьержа © 2026 New-I, Inc. · AI-HOST™ — товарный знак New-I, Inc.',
     filters: { all: 'Все фото', out: 'Снаружи', in: 'Гостиная и кухня', bed: 'Спальни' },
     caps: {
       pDeck: 'Задняя палуба — сауна, джакузи, гриль и шезлонги.',
@@ -406,28 +526,30 @@ const STRINGS = {
     }
   },
   es: {
-    conBtnHow: 'Cómo funciona el conserje',
-    conBtnAsk: 'Pregunta al conserje',
-    conBtnWa: 'WhatsApp al dueño',
-    bookAskWa: 'O escribe al dueño por WhatsApp.',
-    footHow: 'Cómo funciona el conserje',
-    footWa: 'WhatsApp al dueño',
-    navHouse: 'La casa', navTour: 'Tour de fotos', navConcierge: 'El conserje', cta: 'Ver fechas', ctaTour: 'Ver la casa',
-    heroKicker: 'South Lake Tahoe · Tahoe Keys · Hasta 6 huéspedes · Admite mascotas',
-    heroTitle: 'Un refugio tranquilo en Tahoe — sauna, jacuzzi y conserje',
-    heroLead: 'Rema por el canal antes de que despierten los niños, sauna y jacuzzi mientras se hace el café, esquía en Heavenly a diez minutos y cierra la noche junto al fuego de gas. Tres habitaciones, dos baños, hasta seis huéspedes y dos perros bien educados — con un conserje de IA que planifica tus días y responde cualquier pregunta, antes y durante tu estadía.',
+    navHouse: 'La casa', navTour: 'Tour de fotos', navConcierge: 'El conserje', cta: 'Reservar', cta2: 'Reservar', ctaTour: 'Ver la casa',
+    heroKicker: 'South Lake Tahoe · Tahoe Keys · VHR #334053',
+    heroTitle: 'The Rabbit Hole',
+    heroSub: 'Un refugio privado en Tahoe — sauna, jacuzzi, el lago a pie y tu propio Tahoe Concierge.',
+    heroFacts: '3 habitaciones · 2 baños · Hasta 6 huéspedes · Admite mascotas',
+    heroRating: '★ 5.0 en Airbnb · anfitriones Superhost',
     heroNote: 'Desde $450 la noche · mínimo 2 noches · reserva instantánea',
     heroCaption: 'La terraza trasera — sauna, jacuzzi, parrilla y pinos.',
-    fact1: 'Habitaciones y baños — dos camas queen arriba y una full con nido para los niños',
-    fact2: 'Huéspedes, más hasta dos perros bien educados — la terraza está totalmente cercada',
-    fact3n: '10 min', fact3: 'Al resort de esquí Heavenly; el canal de Tahoe Keys queda a un paseo con paddle board',
-    fact4n: '4 autos', fact4: 'Dos en el garaje, dos en la entrada — y Wi-Fi de 250+ Mbps dentro',
+    heroAiTag: 'Conoce a tu Tahoe Concierge',
+    whyLabel: 'Por qué esta casa', whyTitle: 'Otra clase de estadía en Tahoe',
+    w1h: 'Sauna privada de cedro', w1p: 'Caliente en 45 minutos — después de las pistas, o como todo el plan de la noche.',
+    w2h: 'Jacuzzi bajo los pinos', w2p: 'Tu propio remojo en la terraza totalmente cercada.',
+    w3h: 'El lago a pie', w3p: 'Rabbit Hole Beach queda a unos 22 minutos a pie — sin auto, sin buscar parking.',
+    w4h: '3 habitaciones · 2 baños', w4p: 'Dos camas queen arriba y una full con nido — hasta 6 huéspedes. Wi-Fi 250+ Mbps, parking para 4 autos.',
+    w5h: 'Perros bienvenidos', w5p: 'Hasta dos perros bien educados; tarifa de $200.',
+    w6h: 'Tu Tahoe Concierge', w6p: 'Pregunta por la casa, cenas, senderos o el plan de hoy — por voz o texto, 24/7.',
     tourLabel: 'Tour de fotos', tourTitle: 'Recorre la casa',
     tourLead: 'Todo hecho con cariño — una sala acogedora con chimenea de gas, una cocina totalmente equipada y un patio pensado para días enteros al aire libre.',
     amenities: ['Jacuzzi', 'Sauna de cedro', 'Paddle boards', 'Fogata de gas', 'Parrilla de gas', 'Hamaca', 'Chimenea de gas', 'Lavadora y secadora', 'Guarda-esquís', 'Espacio de trabajo'],
     amHoa: 'Pases HOA: playa privada, piscina y tenis',
-    heroAiTag: 'Conserje de IA incluido',
-    conLabel: 'El rasgo distintivo', conTitle: 'Tahoe Concierge — un agente de IA avanzado al servicio de tu estadía',
+    walkLabel: 'El lago', walkTitle: 'El lago a pie',
+    walkP: 'Deja el auto en la casa. El sendero del barrio lleva a Rabbit Hole Beach — el nombre que los anfitriones le dan a Keys Beach — para una tarde fácil o un atardecer. Unos 22 minutos a pie, sin tarifa, sin reserva, y los perros son bienvenidos.',
+    walkBtn: 'Ruta a pie',
+    conLabel: 'El rasgo distintivo', conTitle: 'Conoce a tu Tahoe Concierge — un agente de IA avanzado al servicio de tu estadía',
     conSub: 'No es un chatbot de respuestas enlatadas: un agente de IA creado por el dueño sobre modelos de frontera, con conocimiento real de esta casa, este lago y tus fechas — y la autonomía para planificar, replanificar y actuar por ti.',
     cap1h: 'Habla como una persona', cap1p: 'Voz en el número propio de la casa y texto por chat — interrúmpelo a media frase, se calla y escucha. Sin app, sin cuenta.',
     cap2h: 'Planifica y replanifica', cap2p: 'Arma tu itinerario con tus fechas e intereses, resuelve choques y reorganiza el plan cuando el día cambia.',
@@ -439,9 +561,16 @@ const STRINGS = {
     step1: 'Reserva la casa — el enlace de la guía llega con tu confirmación',
     step2: 'Arma tu plan con el conserje antes de llegar',
     step3: 'Vívelo — el plan se ajusta al clima de cada día',
+    conBtnAsk: 'Pregunta al conserje', conBtnHow: 'Cómo funciona el conserje', conBtnWa: 'WhatsApp al dueño',
+    conDisc: 'Tahoe Concierge es un asistente de IA sobre la plataforma AI-HOST™. Puede equivocarse — confirma lo importante, y una emergencia siempre es el 911.',
+    conCredit: 'Funciona con AI-HOST™ · tecnología de New-I, Inc.',
     locLabel: 'La ubicación', locTitle: 'El rincón tranquilo de Tahoe Keys',
     locLead: 'Junto al canal para remar por la mañana, en un barrio residencial al que las familias vuelven año tras año. La playa privada de los Keys queda a pie con pase HOA; el supermercado, a seis minutos en auto.',
-    d1: 'Playa privada de Tahoe Keys', d1v: 'a pie', d2: 'Supermercado Raley’s', d3: 'Heavenly Village y góndola', d4: 'Casinos de Stateline', d5: 'Resort de esquí Heavenly',
+    d1: 'Rabbit Hole Beach (playa privada de los Keys)', d1v: '22 min a pie',
+    d2: 'Supermercado Raley’s', d2v: '6 min en auto · 2.6 km',
+    d3: 'Resort de esquí Heavenly', d3v: '10 min en auto · 10.6 km',
+    d4: 'Casinos de Stateline', d4v: '12 min en auto · 9.7 km',
+    d5: 'Heavenly Village y góndola', d5v: '15 min en auto · 9.2 km',
     honLabel: 'La parte honesta', honTitle: 'Vale saberlo antes de reservar',
     hon1h: 'Es un barrio de verdad',
     hon1p: 'Horas de silencio de 22:00 a 8:00, el jacuzzi cierra a las 22 — ley del condado, estrictamente aplicada. Sin fiestas, prohibido fumar en toda la propiedad, 25+ para reservar.',
@@ -453,8 +582,11 @@ const STRINGS = {
     bookLead: 'La casa está en todas las plataformas principales — la misma casa, los mismos anfitriones, y reservar directo siempre es bienvenido. Desde $450 la noche más limpieza, mínimo dos noches, reserva instantánea. Check-in a las 4pm con código de puerta, checkout a las 10am. Reembolso total hasta 14 días antes en la mayoría de los canales.',
     bookDirect: 'Reserva directa',
     bookAsk1: '¿Preguntas antes de reservar?', bookAsk2: 'Pregunta al conserje', bookAsk3: 'casi toda la guía está abierta a todos.',
-    footP: 'Una casa familiar entre pinos, administrada con cariño por Summit Tahoe — y una guía creada por el dueño para que tu tiempo aquí se vaya al lago.',
-    footGuide: 'Abrir la guía', footPolicy: 'Cómo funciona la guía',
+    bookAskWa: 'O escribe al dueño por WhatsApp.',
+    foot1: 'The Rabbit Hole · 785 Tuolumne Drive, South Lake Tahoe · permiso VHR #334053 · administrada por Summit Tahoe',
+    foot2: 'Tahoe Concierge funciona con AI-HOST™, una plataforma de New-I, Inc.',
+    footGuide: 'Abrir la guía', footHow: 'Cómo funciona el conserje', footPolicy: 'Privacidad y divulgación de IA', footWa: 'WhatsApp al dueño',
+    footCopy: 'Contenido de la propiedad © 2026 los anfitriones · Tecnología del conserje © 2026 New-I, Inc. · AI-HOST™ es una marca de New-I, Inc.',
     filters: { all: 'Todas las fotos', out: 'Exterior', in: 'Sala y cocina', bed: 'Habitaciones' },
     caps: {
       pDeck: 'La terraza trasera — sauna, jacuzzi, parrilla y tumbonas.',
@@ -479,65 +611,74 @@ const STRINGS = {
 let lang = localStorage.getItem('tahoe-landing-lang')
   || (['ru','es'].includes((navigator.language||'').slice(0,2)) ? (navigator.language||'').slice(0,2) : 'en');
 let filter = 'all', photo = 0;
-
 const $ = (s) => document.querySelector(s);
 const T = () => STRINGS[lang] || STRINGS.en;
 
 function renderText() {
   const t = T();
   document.documentElement.lang = lang;
-  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t[el.dataset.t] ?? ''; });
-  const langsBox = $('#langs');
-  langsBox.innerHTML = '';
-  for (const code of ['en','ru','es']) {
-    const b = document.createElement('button');
-    b.className = 'lang-btn' + (code===lang ? ' on' : '');
-    b.textContent = code.toUpperCase();
-    b.addEventListener('click', () => { lang = code; try { localStorage.setItem('tahoe-landing-lang', code); } catch(e){}; renderText(); renderGallery(); renderLinks(); });
-    langsBox.appendChild(b);
-  }
-  const am = $('#amenities');
-  am.innerHTML = '';
-  for (const a of t.amenities) { const s=document.createElement('span'); s.className='chip'; s.textContent=a; am.appendChild(s); }
-  const hoa=document.createElement('span'); hoa.className='chip'; hoa.style.cssText='background:#fdf6e6;border-color:#e8dcc0;color:#8a6d2f;'; hoa.textContent=t.amHoa; am.appendChild(hoa);
-}
-
-function renderGallery() {
-  const t = T();
-  const visible = PHOTOS.filter(p => filter==='all' || p.gr===filter);
-  const idx = Math.min(photo, visible.length-1);
-  const featured = visible[idx] ?? PHOTOS[0];
-  const img = $('#featured');
-  if (img.getAttribute('src') !== 'photos/'+featured.id+'.webp') img.src = 'photos/'+featured.id+'.webp';
-  img.alt = t.caps[featured.cap];
-  $('#featured-cap').textContent = t.caps[featured.cap];
-  $('#counter').textContent = (idx+1)+' / '+visible.length;
-  const fbox = $('#filters'); fbox.innerHTML='';
-  for (const f of ['all','out','in','bed']) {
-    const b=document.createElement('button');
-    b.className='filter-btn'+(f===filter?' on':''); b.textContent=t.filters[f];
-    b.addEventListener('click', () => { filter=f; photo=0; renderGallery(); });
-    fbox.appendChild(b);
-  }
-  const tbox = $('#thumbs'); tbox.innerHTML='';
-  visible.forEach((p,i) => {
-    const b=document.createElement('button');
-    b.className='thumb'+(i===idx?' on':''); b.setAttribute('aria-label', t.caps[p.cap]);
-    const im=document.createElement('img'); im.src='photos/'+p.id+'-t.webp'; im.alt=t.caps[p.cap]; im.loading='lazy';
-    b.appendChild(im);
-    b.addEventListener('click', () => { photo=i; renderGallery(); });
-    tbox.appendChild(b);
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const v = t[el.dataset.t] ?? STRINGS.en[el.dataset.t];
+    if (typeof v === 'string') el.textContent = v;
   });
-  $('#prev').onclick = () => { photo = (idx-1+visible.length)%visible.length; renderGallery(); };
-  $('#next').onclick = () => { photo = (idx+1)%visible.length; renderGallery(); };
-}
-
-function renderLinks(){
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('on', b.dataset.lang === lang);
+    b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+  });
+  document.querySelectorAll('#amenities .chip:not(#am-hoa)').forEach((el, i) => { el.textContent = t.amenities[i] ?? STRINGS.en.amenities[i]; });
   const how = lang === 'ru' ? 'https://tahoe-guide-landing.vercel.app/ru/' : 'https://tahoe-guide-landing.vercel.app/';
   const a = document.getElementById('link-how'); if (a) a.href = how;
   const b = document.getElementById('link-how-foot'); if (b) b.href = how;
 }
-renderText(); renderGallery(); renderLinks();
+
+function renderGallery() {
+  const t = T();
+  const thumbs = [...document.querySelectorAll('#thumbs .thumb')];
+  const visible = thumbs.filter(el => filter === 'all' || el.dataset.gr === filter);
+  if (!visible.length) return;
+  const idx = Math.min(photo, visible.length - 1);
+  const current = visible[idx];
+  const i = +current.dataset.i;
+  const img = $('#featured');
+  const src = 'photos/' + PHOTO_IDS[i] + '.webp';
+  if (img.getAttribute('src') !== src) img.src = src;
+  const cap = t.caps[CAP_KEYS[i]];
+  img.alt = cap;
+  $('#featured-cap').textContent = cap;
+  $('#counter').textContent = (idx + 1) + ' / ' + visible.length;
+  thumbs.forEach(el => {
+    const show = filter === 'all' || el.dataset.gr === filter;
+    el.style.display = show ? '' : 'none';
+    el.classList.toggle('on', el === current);
+    const tcap = t.caps[CAP_KEYS[+el.dataset.i]];
+    el.setAttribute('aria-label', tcap);
+    el.querySelector('img').alt = tcap;
+  });
+  document.querySelectorAll('#filters .filter-btn').forEach(b => {
+    b.classList.toggle('on', b.dataset.f === filter);
+    b.textContent = t.filters[b.dataset.f];
+  });
+  $('#prev').onclick = () => { photo = (idx - 1 + visible.length) % visible.length; renderGallery(); };
+  $('#next').onclick = () => { photo = (idx + 1) % visible.length; renderGallery(); };
+}
+
+document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem('tahoe-landing-lang', lang); } catch (e) {}
+  renderText(); renderGallery();
+}));
+document.querySelectorAll('#filters .filter-btn').forEach(b => b.addEventListener('click', () => {
+  filter = b.dataset.f; photo = 0; renderGallery();
+}));
+document.querySelectorAll('#thumbs .thumb').forEach(el => el.addEventListener('click', () => {
+  const visible = [...document.querySelectorAll('#thumbs .thumb')].filter(x => filter === 'all' || x.dataset.gr === filter);
+  photo = visible.indexOf(el); if (photo < 0) photo = 0;
+  renderGallery();
+}));
+
+/* English is baked into the markup; JS only takes over for RU/ES or stored prefs. */
+if (lang !== 'en') renderText();
+renderGallery();
 </script>
 </body>
 </html>
