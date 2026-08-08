@@ -135,6 +135,13 @@ button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
 .act__add:hover{background:var(--tint)}
 .act__add.in{background:var(--green);border-color:var(--green);color:#fff}
 
+.act-shelf{
+  grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);margin-top:10px;
+}
+.act-shelf a{text-transform:none;letter-spacing:0}
+
 /* My plan bar */
 .myplan{background:var(--card);border:1px solid var(--tint-line);border-radius:var(--r-card);padding:16px;margin-top:20px}
 .myplan__head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
@@ -325,15 +332,23 @@ button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
     <div class="wrap">
       <div class="conc">
         <div>
-          <p class="conc__label">The concierge</p>
-          <h2 class="conc__h">Not sure what fits your dates? Ask the house.</h2>
+          <p class="conc__label">Your AI concierge</p>
+          <h2 class="conc__h">A seriously advanced AI agent comes with the house</h2>
           <p class="conc__p">
-            The house has its own phone number and a live voice: say it however you
-            like — it listens, answers out loud, and asks back when it isn't sure. It
-            knows the sauna, the trails, the dinners, and what's worth your morning.
-            Talk through your plans before you book, from the couch or from the car —
-            saved as a contact it works through Siri and Google Assistant. It's a
-            computer run by the hosts, it will say so if you ask.
+            Not a chatbot with canned answers — a state-of-the-art AI agent, trained
+            on this one house and this one lake, that accompanies you through the
+            whole stay. Before you book it talks through dates and builds your plan;
+            during the stay it serves you around the clock: replans the day when the
+            weather turns, finds the dinner that fits the evening, answers the sauna
+            question at 11 pm, and
+            hands you to the hosts the moment a human is needed.
+          </p>
+          <p class="conc__p">
+            It has its own phone number and a live voice — say it however you like,
+            it listens, answers out loud, and asks back when it isn't sure. Saved as
+            a contact it works through Siri and Google Assistant, hands-free from the
+            car. And it's honest: it's a computer run by the hosts, and it will say
+            so if you ask.
           </p>
           <div class="conc__actions">
             <a class="btn btn--ondark btn--sm" href="https://tahoe.ai-host.ai/#chat">Chat with the concierge</a>
@@ -452,17 +467,13 @@ const ACTS = [
   {id:'my-thai-cuisine', name:'My Thai Cuisine', cat:'dining', meta:'6 min · $$ · host pick', s:['all']},
   {id:'scusa-italian', name:'Scusa Italian', cat:'dining', meta:'8 min · $$ · host pick', s:['all']},
   {id:'macduffs-pub', name:"MacDuff's Pub", cat:'dining', meta:'12 min · $$ · host pick', s:['all']},
-  /* Bookable days out — tickets via the guide's own product pages, where the
-     prices and departure times are always current. No prices baked here. */
-  {id:'2535P4', code:'2535P4', name:'Emerald Bay Scenic Cruise', cat:'book', meta:'boat tour · 2–3h · host pick', s:['summer','shoulder']},
-  {id:'271742P1', code:'271742P1', name:'2-Hour Sailing Cruise', cat:'book', meta:'sailboat · 2h', s:['summer','shoulder']},
-  {id:'2535P5', code:'2535P5', name:'Evening Dinner Cruise', cat:'book', meta:'dinner on the water · 3h', s:['summer','shoulder']},
-  {id:'268564P2', code:'268564P2', name:'East Shore E-Bike Tour', cat:'book', meta:'self-guided · 2–4h', s:['summer','shoulder']},
-  {id:'383103P1', code:'383103P1', name:'Clear-Kayak Tour, Sand Harbor', cat:'book', meta:'guided paddle · 2h', s:['summer']},
-  {id:'70777P4', code:'70777P4', name:'Truckee River Whitewater Run', cat:'book', meta:'class III rafting · half day', s:['summer']},
-  {id:'91965P2', code:'91965P2', name:'Emerald Bay Helicopter Tour', cat:'book', meta:'scenic flight · the splurge', s:['all']},
-  {id:'259648P2', code:'259648P2', name:'Self-Guided Driving Audio Tour', cat:'book', meta:'one per car · any weather', s:['all']},
 ];
+
+
+/* The guide's own resolved shelves — top six per shelf, extracted from its
+   built Book tab. Names and picks only: prices and departures live on the
+   guide's product pages, which are always current. */
+const SHELVES = [{"key": "boats", "title": "Out on the water", "count": 60, "items": [{"code": "2535P4", "name": "Lake Tahoe Emerald Bay Scenic Cruise", "pick": true}, {"code": "271742P1", "name": "2 Hour Sailing Cruise on Lake Tahoe", "pick": false}, {"code": "2535P5", "name": "Lake Tahoe Evening Dinner Cruise", "pick": false}, {"code": "353202P1", "name": "Private Yacht-Class Boat Tour on Lake Tahoe", "pick": false}, {"code": "350081P1", "name": "Private boat tours of Lake Tahoe for up to six guests.", "pick": false}, {"code": "337938P2", "name": "2 Hour Private Boat Charter With Captain", "pick": false}]}, {"key": "paddle", "title": "Paddle and swim", "count": 33, "items": [{"code": "383103P1", "name": "Clear Kayak Tour of Sand Harbor's Crystal Clear Waters", "pick": false}, {"code": "70777P4", "name": "Truckee River: Boca to Floriston Run (Class III Whitewater)", "pick": false}, {"code": "321056P1", "name": "Clear Kayak Tour of Lake Tahoe (from Incline Village)", "pick": false}, {"code": "6451PARASAIL", "name": "South Lake Tahoe Parasailing", "pick": false}, {"code": "37022P4", "name": "Lake Tahoe's West Shore Best Shore Kayak Tour", "pick": false}, {"code": "466292P2", "name": "SAND HARBOR EXPERIENCE includes Transportation-Entry-Beach Camp", "pick": false}]}, {"key": "tours", "title": "Seeing the lake", "count": 38, "items": [{"code": "268564P2", "name": "Tahoe Coastal Self-Guided E-Bike Tour(2–4 hrs) | East Shore Trail", "pick": false}, {"code": "259648P2", "name": "Ultimate Lake Tahoe Self-Guided Driving Audio Tour", "pick": false}, {"code": "91965P2", "name": "Emerald Bay Helicopter Tour of Lake Tahoe", "pick": false}, {"code": "6508P4", "name": "Yosemite Grand Adventure - day tour from S. Lake Tahoe", "pick": false}, {"code": "466292P1", "name": "&quot;Lake Tahoe 101&quot; : See The Whole Lake! 6 HR Shared Tour by Van.", "pick": false}, {"code": "6508TAHOE", "name": "Full-Day Lake Tahoe Circle Tour including Olympic Valley", "pick": false}]}, {"key": "land", "title": "On foot, wheels and hooves", "count": 22, "items": [{"code": "285594P6", "name": "Electric Dirtbike Adventure in Lake Tahoe", "pick": false}, {"code": "285594P5", "name": "Sunset Hike and Photography Adventure in South Lake Tahoe", "pick": false}, {"code": "330916P1", "name": "Lake Tahoe-Hike Year Round With a Local", "pick": false}, {"code": "285594P9", "name": "Hidden Trails Hiking Adventure in South Lake Tahoe", "pick": false}, {"code": "358497P4", "name": "Beginner Archery Experience in Lake Tahoe–Outdoor Shooting Lesson", "pick": false}, {"code": "469165P1", "name": "Via Ferrata Adventure in North Lake Tahoe", "pick": false}]}, {"title": "From above", "count": 1, "items": [{"code": "5655277P1", "name": "Ultimate Tahoe Balloon Adventure", "pick": false}]}, {"key": "indoors", "title": "When the lake is not the plan", "count": 18, "items": [{"code": "5670713P1", "name": "Alex Ramon Magic Show Ticket, Lake Tahoe", "pick": false}, {"code": "5493228P1", "name": "Charcuterie Board Making (and Eating!) in South Lake Tahoe", "pick": false}, {"code": "200006P225", "name": "Lake Tahoe Tirade Scavenger Hunt", "pick": false}, {"code": "5619414P3", "name": "Craft Your Own Custom Candles Tahoe Workshop", "pick": false}, {"code": "5676505P3", "name": "Make Your Own Tahoe Incense from Pine Resin & Wild Herbs", "pick": false}, {"code": "485100P2", "name": "Mini Golf 9 Hole Course in Lake Tahoe", "pick": false}]}];
 
 /* Typical month, when the forecast can't reach your dates. °F highs/lows. */
 const CLIMO = {
@@ -492,7 +503,7 @@ rail.addEventListener('scroll', () => {
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const store = JSON.parse(localStorage.getItem('stay-plan') || '{}');
-let plan = Array.isArray(store.ids) ? store.ids.filter(id => ACTS.some(a=>a.id===id)) : [];
+let plan = Array.isArray(store.ids) ? store.ids : [];
 const persist = () => localStorage.setItem('stay-plan', JSON.stringify({
   ids: plan, in: dIn.value, out: dOut.value,
 }));
@@ -558,6 +569,7 @@ function markSeasons(a){
   const s = a ? seasonOf(a.getMonth()+1) : null;
   document.querySelectorAll('.act').forEach(el=>{
     const act = ACTS.find(x=>x.id===el.dataset.id);
+    if (!act) return;
     const off = s && !(act.s.includes('all')||act.s.includes(s));
     el.classList.toggle('act--off', !!off);
     el.querySelector('.act__season').textContent = off ? `a ${act.s.join('/')} thing — likely out of season for your dates` : '';
@@ -580,11 +592,34 @@ for (const a of ACTS) {
   });
   actsBox.appendChild(el);
 }
+
+/* Book-a-day-out: the guide's shelves, rendered into the same grid. */
+const BOOK_BY_CODE = {};
+for (const sh of SHELVES) {
+  const head = document.createElement('div');
+  head.className = 'act-shelf'; head.dataset.cat = 'book'; head.style.display = 'none';
+  head.innerHTML = `<span>${sh.title}</span>` + (sh.key
+    ? ` <a href="${GUIDE}/browse/${sh.key}" target="_blank" rel="noopener">see all ${sh.count} →</a>` : '');
+  actsBox.appendChild(head);
+  for (const it of sh.items) {
+    BOOK_BY_CODE[it.code] = it;
+    const el = document.createElement('div');
+    el.className = 'act'; el.dataset.id = it.code; el.dataset.cat = 'book'; el.style.display = 'none';
+    el.innerHTML = `<div><p class="act__h">${it.name}</p><p class="act__meta">${it.pick ? "host's pick · " : ''}<a href="${GUIDE}/book/${it.code}" target="_blank" rel="noopener">details &amp; book</a></p><p class="act__season"></p></div>
+      <button class="act__add" aria-label="Add ${it.name} to plan">+ to plan</button>`;
+    el.querySelector('.act__add').addEventListener('click', () => {
+      plan = plan.includes(it.code) ? plan.filter(x=>x!==it.code) : [...plan, it.code];
+      renderPlan();
+    });
+    actsBox.appendChild(el);
+  }
+}
+
 document.getElementById('chips').addEventListener('click', e => {
   const b = e.target.closest('.chip'); if (!b) return;
   document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on', c===b));
   const cat = b.dataset.cat;
-  document.querySelectorAll('.act').forEach(el=>{ el.style.display = (cat==='all'||el.dataset.cat===cat)?'':'none'; });
+  document.querySelectorAll('.act, .act-shelf').forEach(el=>{ el.style.display = (el.dataset.cat===cat || (cat==='all' && el.dataset.cat!=='book' && !el.classList.contains('act-shelf')))?'':'none'; });
 });
 
 /* ── My plan ────────────────────────────────────────────────────────────── */
@@ -594,16 +629,16 @@ const emptyEl = document.getElementById('plan-empty');
 const openEl = document.getElementById('plan-open');
 /* `at-home` items are amenities, not destinations — the guide plans places, so
    the link carries only ids the guide's plan knows. */
+const nameOf = id => ACTS.find(a=>a.id===id)?.name ?? BOOK_BY_CODE[id]?.name ?? id;
 const linkable = () => plan.filter(id => ACTS.find(a=>a.id===id)?.cat !== 'at-home');
 function planUrl(){ return `${GUIDE}/?plan=${encodeURIComponent(linkable().join(','))}`; }
 function renderPlan(){
   persist();
   listEl.innerHTML='';
   for (const id of plan) {
-    const a = ACTS.find(x=>x.id===id);
     const li=document.createElement('li');
-    li.innerHTML=`<span>${a.name}</span>`;
-    const rm=document.createElement('button'); rm.className='myplan__rm'; rm.textContent='✕'; rm.setAttribute('aria-label','Remove '+a.name);
+    li.innerHTML=`<span>${nameOf(id)}</span>`;
+    const rm=document.createElement('button'); rm.className='myplan__rm'; rm.textContent='✕'; rm.setAttribute('aria-label','Remove '+nameOf(id));
     rm.addEventListener('click',()=>{ plan=plan.filter(x=>x!==id); renderPlan(); });
     li.appendChild(rm); listEl.appendChild(li);
   }
