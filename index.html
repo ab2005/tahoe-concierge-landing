@@ -170,6 +170,11 @@
         <p style="font-size:13.5px;color:#b9c0aa;" data-t="cap4p"></p>
       </div>
     </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;">
+      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" id="link-how" href="https://tahoe-guide-landing.vercel.app/" data-t="conBtnHow"></a>
+      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" href="https://tahoe.ai-host.ai/#chat" data-t="conBtnAsk"></a>
+      <a class="btn btn--md" style="border-color:rgba(255,255,255,.55);color:#fff;" href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="conBtnWa"></a>
+    </div>
   </div>
 </section>
 
@@ -226,7 +231,7 @@
         <a class="btn btn--md" href="https://www.booking.com/hotel/us/tahoe-tuolumne-sauna-soak-repeat.html" target="_blank" rel="noopener">Booking.com</a>
         <a class="btn btn--md" href="https://www.google.com/travel/hotels/entity/CgsQ_4-3lqmQ2ubrARAC/overview" target="_blank" rel="noopener">Google</a>
       </div>
-      <p class="mono" style="font-size:13px;color:#6b7060;margin-top:4px;"><span data-t="bookAsk1"></span> <a href="https://tahoe.ai-host.ai/#chat" data-t="bookAsk2"></a> — <span data-t="bookAsk3"></span></p>
+      <p class="mono" style="font-size:13px;color:#6b7060;margin-top:4px;"><span data-t="bookAsk1"></span> <a href="https://tahoe.ai-host.ai/#chat" data-t="bookAsk2"></a> — <span data-t="bookAsk3"></span> <a href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="bookAskWa"></a></p>
     </div>
   </div>
 </section>
@@ -235,7 +240,9 @@
   <p style="font-size:14.5px;color:#6b7060;max-width:56ch;margin-bottom:14px;" data-t="footP"></p>
   <div style="display:flex;gap:20px;font-size:14.5px;flex-wrap:wrap;">
     <a href="https://tahoe.ai-host.ai" data-t="footGuide"></a>
+    <a id="link-how-foot" href="https://tahoe-guide-landing.vercel.app/" data-t="footHow"></a>
     <a href="https://tahoe.ai-host.ai/policy" data-t="footPolicy"></a>
+    <a href="https://wa.me/14084290090" target="_blank" rel="noopener" data-t="footWa"></a>
   </div>
   <p class="mono" style="margin-top:22px;padding-top:14px;border-top:1px solid #e0e0d6;font-size:12px;color:#9b9f90;">Tahoe&nbsp;Concierge by new-i.ai · © 2026 new-i.ai · ai-host.ai™ · VHR Permit #334053</p>
 </footer>
@@ -261,6 +268,12 @@ const PHOTOS = [
 
 const STRINGS = {
   en: {
+    conBtnHow: 'How the concierge works',
+    conBtnAsk: 'Ask the concierge',
+    conBtnWa: 'WhatsApp the owner',
+    bookAskWa: 'Or WhatsApp the owner directly.',
+    footHow: 'How the concierge works',
+    footWa: 'WhatsApp the owner',
     navHouse: 'The house', navTour: 'Photo tour', navConcierge: 'Concierge', cta: 'Check dates', ctaTour: 'See the house',
     heroKicker: 'South Lake Tahoe · Tahoe Keys · Sleeps 6 · Pet friendly',
     heroTitle: 'A tranquil Tahoe retreat — sauna, hot tub, and a concierge',
@@ -324,6 +337,12 @@ const STRINGS = {
     }
   },
   ru: {
+    conBtnHow: 'Как устроен консьерж',
+    conBtnAsk: 'Спросить консьержа',
+    conBtnWa: 'WhatsApp хозяину',
+    bookAskWa: 'Или напишите хозяину в WhatsApp.',
+    footHow: 'Как устроен консьерж',
+    footWa: 'WhatsApp хозяину',
     navHouse: 'Дом', navTour: 'Фото-тур', navConcierge: 'Консьерж', cta: 'Проверить даты', ctaTour: 'Посмотреть дом',
     heroKicker: 'Саут-Лейк-Тахо · Tahoe Keys · До 6 гостей · Можно с собаками',
     heroTitle: 'Тихий дом у Тахо — сауна, джакузи и консьерж',
@@ -387,6 +406,12 @@ const STRINGS = {
     }
   },
   es: {
+    conBtnHow: 'Cómo funciona el conserje',
+    conBtnAsk: 'Pregunta al conserje',
+    conBtnWa: 'WhatsApp al dueño',
+    bookAskWa: 'O escribe al dueño por WhatsApp.',
+    footHow: 'Cómo funciona el conserje',
+    footWa: 'WhatsApp al dueño',
     navHouse: 'La casa', navTour: 'Tour de fotos', navConcierge: 'El conserje', cta: 'Ver fechas', ctaTour: 'Ver la casa',
     heroKicker: 'South Lake Tahoe · Tahoe Keys · Hasta 6 huéspedes · Admite mascotas',
     heroTitle: 'Un refugio tranquilo en Tahoe — sauna, jacuzzi y conserje',
@@ -468,7 +493,7 @@ function renderText() {
     const b = document.createElement('button');
     b.className = 'lang-btn' + (code===lang ? ' on' : '');
     b.textContent = code.toUpperCase();
-    b.addEventListener('click', () => { lang = code; try { localStorage.setItem('tahoe-landing-lang', code); } catch(e){}; renderText(); renderGallery(); });
+    b.addEventListener('click', () => { lang = code; try { localStorage.setItem('tahoe-landing-lang', code); } catch(e){}; renderText(); renderGallery(); renderLinks(); });
     langsBox.appendChild(b);
   }
   const am = $('#amenities');
@@ -507,7 +532,12 @@ function renderGallery() {
   $('#next').onclick = () => { photo = (idx+1)%visible.length; renderGallery(); };
 }
 
-renderText(); renderGallery();
+function renderLinks(){
+  const how = lang === 'ru' ? 'https://tahoe-guide-landing.vercel.app/ru/' : 'https://tahoe-guide-landing.vercel.app/';
+  const a = document.getElementById('link-how'); if (a) a.href = how;
+  const b = document.getElementById('link-how-foot'); if (b) b.href = how;
+}
+renderText(); renderGallery(); renderLinks();
 </script>
 </body>
 </html>
