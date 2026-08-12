@@ -110,6 +110,9 @@
     .sitenav nav{gap:10px !important;}
     .sitenav nav > div:last-child{gap:10px !important;}
     .sitenav .btn{padding:9px 14px !important;font-size:13px !important;}
+    /* RU's Забронировать is wide; the address yields a few px so nothing pans */
+    .sitenav nav > a:first-child{font-size:13px !important;}
+    .sitenav nav > a:first-child svg{width:15px;height:15px;}
   }
 </style>
 </head>
@@ -242,9 +245,33 @@
     <h2 class="label" style="color:#8fd07a;font-size:13px;">✦ <span data-t="conLabel">The distinguishing feature</span></h2>
     <p class="h2" style="color:#fff;max-width:30ch;" data-t="conTitle">Meet your Tahoe Concierge — an advanced AI agent, in service of your stay</p>
     <p style="margin-top:12px;max-width:60ch;color:#b9c0aa;" data-t="conSub">Not a chatbot with canned answers: an AI agent built by the owner on frontier models, with real knowledge of this house, this lake, and your dates — and the agency to plan, replan, and act on your behalf.</p>
+    <div style="display:flex;gap:16px;overflow-x:auto;margin:22px -32px 4px;padding:6px 32px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;">
+      <figure style="margin:0;flex:none;width:212px;scroll-snap-align:center;">
+        <span style="display:block;position:relative;background:#000;border-radius:30px;padding:7px;border:1px solid #2a2e24;box-shadow:12px 16px 34px rgba(0,0,0,.5);">
+          <span style="position:absolute;top:4.8%;left:50%;transform:translateX(-50%);width:29%;aspect-ratio:100/29;background:#0a0b08;border-radius:999px;z-index:2;" aria-hidden="true"></span>
+          <img src="photos/ph-ask.webp" alt="The Ask sheet: one button to talk to the house, one to call it" width="640" height="1385" loading="lazy" style="width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:23px;display:block;">
+        </span>
+        <figcaption class="mono" style="font-size:12px;color:#b9c0aa;margin-top:10px;line-height:1.45;text-align:center;" data-t="capShot1">Say it out loud — or call the house's own number</figcaption>
+      </figure>
+      <figure style="margin:0;flex:none;width:212px;scroll-snap-align:center;">
+        <span style="display:block;position:relative;background:#000;border-radius:30px;padding:7px;border:1px solid #2a2e24;box-shadow:12px 16px 34px rgba(0,0,0,.5);">
+          <span style="position:absolute;top:4.8%;left:50%;transform:translateX(-50%);width:29%;aspect-ratio:100/29;background:#0a0b08;border-radius:999px;z-index:2;" aria-hidden="true"></span>
+          <img src="photos/ph-chat.webp" alt="The chat: the concierge answers a swimming question with place cards" width="640" height="1385" loading="lazy" style="width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:23px;display:block;">
+        </span>
+        <figcaption class="mono" style="font-size:12px;color:#b9c0aa;margin-top:10px;line-height:1.45;text-align:center;" data-t="capShot2">Ask in chat — answers come with places, not links</figcaption>
+      </figure>
+      <figure style="margin:0;flex:none;width:212px;scroll-snap-align:center;">
+        <span style="display:block;position:relative;background:#000;border-radius:30px;padding:7px;border:1px solid #2a2e24;box-shadow:12px 16px 34px rgba(0,0,0,.5);">
+          <span style="position:absolute;top:4.8%;left:50%;transform:translateX(-50%);width:29%;aspect-ratio:100/29;background:#0a0b08;border-radius:999px;z-index:2;" aria-hidden="true"></span>
+          <img src="photos/ph-plan.webp" alt="My plan: the day's rows with editable times, Share and Add to calendar" width="640" height="1385" loading="lazy" style="width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:23px;display:block;">
+        </span>
+        <figcaption class="mono" style="font-size:12px;color:#b9c0aa;margin-top:10px;line-height:1.45;text-align:center;" data-t="capShot3">Keep what fits — the plan goes to your calendar</figcaption>
+      </figure>
+    </div>
+    <p class="mono" style="font-size:11px;color:#6b7060;text-align:center;margin:0 0 6px;" data-t="stripNote">real screens, swipe →</p>
     <div class="g2t" style="margin-top:24px;">
       <div>
-        <p style="margin:0 0 14px;font-size:15px;"><span data-t="conP1a">Every booking comes with</span> <a href="https://tahoe.ai-host.ai" style="color:#8fd07a;">Tahoe Concierge</a><span data-t="conP1b"> — a guide to this house and the lake, built by the owner. Open it the day you book: enter your dates and start planning with an AI concierge that knows the area, the house, and the season. Beaches we return to, trails by difficulty, around two hundred bookable tours and rentals — talk it through in chat or out loud on the phone, and keep what fits in your plan.</span></p>
+        <p style="margin:0 0 14px;font-size:15px;"><span data-t="conP1a">Every booking comes with</span> <a href="https://tahoe.ai-host.ai" style="color:#8fd07a;">Tahoe Concierge</a><span data-t="conP1b"> — a guide to this house and the lake, built by the owner. Open it the day you book: beaches we return to, trails by difficulty, around two hundred bookable tours and rentals — talk it through in chat or out loud on the phone, and keep what fits in your plan.</span></p>
         <p style="margin:0 0 16px;font-size:15px;" data-t="conP2">Then you arrive, and the plan goes to work. The first screen shows the weather at the house and a live camera on the lake; if the day changes, the concierge reshuffles the plan — kayaks slide to tomorrow, the sauna moves up to today. Every house question — how the sauna heats, when trash goes out — is one question away, in chat or by phone with no internet at all.</p>
         <p class="mono" style="font-size:13px;color:#b9c0aa;border-left:2px solid #8fd07a;padding-left:12px;" data-t="conQuote">Plan before you arrive. Let the weather change. The plan keeps up.</p>
       </div>
@@ -389,9 +416,13 @@ const STRINGS = {
     cap2h: 'Plans and replans', cap2p: 'Builds your itinerary from your dates and interests, resolves conflicts, and reshuffles the plan when the day changes.',
     cap3h: 'Reads the sky', cap3p: 'Watches the forecast and the live lake cam — kayaks slide to tomorrow, the sauna moves up to today.',
     cap4h: 'Knows the house', cap4p: "The sauna, the hot tub, the trash days, the door code rule — every answer in the owner's own words.",
-    conP1a: 'Every booking comes with', conP1b: ' — a guide to this house and the lake, built by the owner. Open it the day you book: enter your dates and start planning with an AI concierge that knows the area, the house, and the season. Beaches we return to, trails by difficulty, around two hundred bookable tours and rentals — talk it through in chat or out loud on the phone, and keep what fits in your plan.',
+    conP1a: 'Every booking comes with', conP1b: ' — a guide to this house and the lake, built by the owner. Open it the day you book: beaches we return to, trails by difficulty, around two hundred bookable tours and rentals — talk it through in chat or out loud on the phone, and keep what fits in your plan.',
     conP2: "Then you arrive, and the plan goes to work. The first screen shows the weather at the house and a live camera on the lake; if the day changes, the concierge reshuffles the plan — kayaks slide to tomorrow, the sauna moves up to today. Every house question — how the sauna heats, when trash goes out — is one question away, in chat or by phone with no internet at all.",
     conQuote: 'Plan before you arrive. Let the weather change. The plan keeps up.',
+    capShot1: "Say it out loud — or call the house's own number",
+    capShot2: 'Ask in chat — answers come with places, not links',
+    capShot3: 'Keep what fits — the plan goes to your calendar',
+    stripNote: 'real screens, swipe →',
     step1: 'Book the house — the guide link arrives with your confirmation',
     step2: 'Build your plan with the concierge before you arrive',
     step3: "Live it out — the plan adjusts to each day's weather",
@@ -469,9 +500,13 @@ const STRINGS = {
     cap2h: 'Планирует и перестраивает', cap2p: 'Собирает маршрут из ваших дат и интересов, разводит конфликты и пересобирает план, когда день меняется.',
     cap3h: 'Читает небо', cap3p: 'Следит за прогнозом и живой камерой озера — каяки сдвигаются на завтра, сауна поднимается на сегодня.',
     cap4h: 'Знает дом', cap4p: 'Сауна, джакузи, дни мусора, правило кода двери — каждый ответ словами владельца.',
-    conP1a: 'К каждому бронированию прилагается', conP1b: ' — гид по этому дому и озеру, построенный владельцем. Откройте его в день брони: введите даты и начните планировать с ИИ-консьержем, который знает округу, дом и сезон. Пляжи, куда мы возвращаемся сами, тропы по сложности, около двухсот туров и прокатов — обсудите в чате или голосом по телефону и оставьте в плане то, что подходит.',
+    conP1a: 'К каждому бронированию прилагается', conP1b: ' — гид по этому дому и озеру, построенный владельцем. Откройте его в день брони: пляжи, куда мы возвращаемся сами, тропы по сложности, около двухсот туров и прокатов — обсудите в чате или голосом по телефону и оставьте в плане то, что подходит.',
     conP2: 'А потом вы приезжаете — и план начинает работать. Первый экран показывает погоду у дома и живую камеру на озере; если день изменился, консьерж пересобирает план — каяки сдвигаются на завтра, сауна поднимается на сегодня. Любой вопрос о доме — как греется сауна, когда выносить мусор — в одном вопросе, в чате или по телефону вообще без интернета.',
     conQuote: 'Спланируйте до приезда. Пусть погода меняется. План успеет.',
+    capShot1: 'Скажите вслух — или позвоните на собственный номер дома',
+    capShot2: 'Спросите в чате — ответ приходит местами, а не ссылками',
+    capShot3: 'Оставьте своё — план уедет в ваш календарь',
+    stripNote: 'настоящие экраны, листайте →',
     step1: 'Забронируйте дом — ссылка на гид придёт с подтверждением',
     step2: 'Соберите план с консьержем до приезда',
     step3: 'Живите по плану — он подстраивается под погоду каждого дня',
@@ -549,9 +584,13 @@ const STRINGS = {
     cap2h: 'Planifica y replanifica', cap2p: 'Arma tu itinerario con tus fechas e intereses, resuelve choques y reorganiza el plan cuando el día cambia.',
     cap3h: 'Lee el cielo', cap3p: 'Vigila el pronóstico y la cámara del lago en vivo — los kayaks pasan a mañana, la sauna sube a hoy.',
     cap4h: 'Conoce la casa', cap4p: 'La sauna, el jacuzzi, los días de basura, la regla del código — cada respuesta con palabras del dueño.',
-    conP1a: 'Cada reserva incluye', conP1b: ' — una guía de esta casa y del lago, creada por el dueño. Ábrela el día que reserves: ingresa tus fechas y empieza a planificar con un conserje de IA que conoce la zona, la casa y la temporada. Playas a las que volvemos, senderos por dificultad, unas doscientas ofertas de tours y alquileres — convérsalo por chat o de viva voz por teléfono, y guarda en tu plan lo que encaje.',
+    conP1a: 'Cada reserva incluye', conP1b: ' — una guía de esta casa y del lago, creada por el dueño. Ábrela el día que reserves: playas a las que volvemos, senderos por dificultad, unas doscientas ofertas de tours y alquileres — convérsalo por chat o de viva voz por teléfono, y guarda en tu plan lo que encaje.',
     conP2: 'Luego llegas, y el plan se pone a trabajar. La primera pantalla muestra el clima en la casa y una cámara en vivo del lago; si el día cambia, el conserje reorganiza el plan — los kayaks pasan a mañana, la sauna sube a hoy. Cualquier duda de la casa — cómo se calienta la sauna, cuándo sacar la basura — está a una pregunta, por chat o por teléfono sin internet alguno.',
     conQuote: 'Planifica antes de llegar. Deja que el clima cambie. El plan se adapta.',
+    capShot1: 'Dígalo en voz alta — o llame al número propio de la casa',
+    capShot2: 'Pregunta en el chat — las respuestas llegan con lugares, no enlaces',
+    capShot3: 'Guarda lo tuyo — el plan va a tu calendario',
+    stripNote: 'pantallas reales, desliza →',
     step1: 'Reserva la casa — el enlace de la guía llega con tu confirmación',
     step2: 'Arma tu plan con el conserje antes de llegar',
     step3: 'Vívelo — el plan se ajusta al clima de cada día',
